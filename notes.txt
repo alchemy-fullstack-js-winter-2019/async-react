@@ -1,0 +1,6 @@
+Start off with hard coded data.
+Start with a mock
+Put the JSON from the api in the app to use directly
+
+draw boxes around individual components that you're going to create
+
