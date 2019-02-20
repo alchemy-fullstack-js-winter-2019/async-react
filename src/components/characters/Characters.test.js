@@ -7,8 +7,7 @@ describe('Characters', () => {
     const tree = renderer.create(
       <Characters/>
     ).toJSON();
-    
+
     expect(tree).toMatchSnapshot();
   });
 });
-
