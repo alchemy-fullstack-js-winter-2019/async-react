@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-function Character(character) {
+function Character({ character }) {
+  console.log(character);
   const { name, status, species, gender } = character;
   return (
-    <p>{name}, {status}, {species}, {gender}</p>
+    <Fragment>
+      {name}, {status}, {species}, {gender}
+    </Fragment>
   );
 }
 

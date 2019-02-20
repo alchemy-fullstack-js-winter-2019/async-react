@@ -7,7 +7,7 @@ describe('Character', () => {
     name: 'Rick Sanchez',
     status: 'Alive',
     species: 'Human',
-    gender: 'Male',
+    gender: 'Male'
   };
   const tree = renderer.create(
     <Character 

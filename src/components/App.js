@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Header from './Header';
-import Character from './characters/Character';
+import Characters from './characters/Characters';
 
 class App extends Component {
 
@@ -8,12 +8,7 @@ class App extends Component {
     return (
       <Fragment>
         <Header />
-        <Character 
-          name='Rick Sanchez'
-          status='Alive'
-          species='Human'
-          gender='Male'
-        />
+        <Characters />
       </Fragment>
     );
   }
