@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Characters test a matching snapshot 1`] = `
+<ul>
+  <li>
+    <h3>
+      Lance
+    </h3>
+    <h4>
+      unknown
+    </h4>
+    <h5>
+      alive
+    </h5>
+    <h5>
+      Male
+    </h5>
+  </li>
+  <li>
+    <h3>
+      Lance2
+    </h3>
+    <h4>
+      unknown
+    </h4>
+    <h5>
+      alive
+    </h5>
+    <h5>
+      Male
+    </h5>
+  </li>
+  <li>
+    <h3>
+      Lance3
+    </h3>
+    <h4>
+      unknown
+    </h4>
+    <h5>
+      alive
+    </h5>
+    <h5>
+      Male
+    </h5>
+  </li>
+  <li>
+    <h3>
+      Lance4
+    </h3>
+    <h4>
+      unknown
+    </h4>
+    <h5>
+      alive
+    </h5>
+    <h5>
+      Male
+    </h5>
+  </li>
+  <li>
+    <h3>
+      Lance5
+    </h3>
+    <h4>
+      unknown
+    </h4>
+    <h5>
+      alive
+    </h5>
+    <h5>
+      Male
+    </h5>
+  </li>
+</ul>
+`;
