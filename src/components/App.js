@@ -1,13 +1,23 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import Header from './Header';
+import Character from './characters/Character';
 
-export default class App extends PureComponent {
+
+export default class App extends Component {
+  
   render() {
+    const character = {
+      name: 'teonna',
+      status: 'alive',
+      species: 'human',
+      gender: 'female'
+    };
     return (
       <>
-       <Header />
-        <h1> Hello World </h1>
+        <Header />
+        <Character character={character} />
+        <h1>Async React</h1>
       </>
-    )
+    );
   }
 }

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+Array [
+  <h1>
+    Header
+  </h1>,
+  <h1>
+    Async React
+  </h1>,
+]
+`;
+
+exports[`App matches a snapshot 1`] = `
+Array [
+  <h1>
+    Header
+  </h1>,
+  <h1>
+    Async React
+  </h1>,
+]
+`;
