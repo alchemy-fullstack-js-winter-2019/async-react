@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character matches a snapshot 1`] = `
+Array [
+  <img
+    src="https://www.littledayout.com/wp-content/uploads/articles/2017/07-July/20170715-WorldEmojiDay/DabEmoji.jpg"
+  />,
+  <p>
+    bob
+  </p>,
+  <p>
+    Status: 
+    alive
+  </p>,
+  <p>
+    Species: 
+    human
+  </p>,
+  <p>
+    Gender: 
+    mail
+  </p>,
+]
+`;

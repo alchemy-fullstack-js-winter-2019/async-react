@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-function Character({ name, status, species, gender, img }) {
-  return (
-    <>
-      <img src={img}/>
-      <p>{name}</p>
-      <p>Status: {status}</p>
-      <p>Species: {species}</p>
-      <p>Gender: {gender}</p>
-    </>
-  );
+export default class Character extends PureComponent {
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+    img: PropTypes.string,
+    status: PropTypes.string.isRequired,
+    species: PropTypes.string,
+    gender: PropTypes.string
+  }
+
+  render() {
+    return (
+      <>
+        <img src={this.props.img}/>
+        <p>{this.props.name}</p>
+        <p>Status: {this.props.status}</p>
+        <p>Species: {this.props.species}</p>
+        <p>Gender: {this.props.gender}</p>
+      </>
+    );
+  }
 }
-
-Character.propTypes = {
-  name: PropTypes.string.isRequired,
-  img: PropTypes.string,
-  status: PropTypes.string.isRequired,
-  species: PropTypes.string,
-  gender: PropTypes.string
-};
-
-export default Character;
