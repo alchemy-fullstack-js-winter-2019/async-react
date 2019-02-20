@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, {} from 'react';
 import Character from './Character';
 
 const results = [
@@ -11,14 +10,15 @@ export default class Characters extends React.PureComponent {
     characters: []
   }
 
-  comonentDidMount() {
-
+  componentDidMount() {
+    this.setState({ characters: results });
   }
 
   render() {
-    const listOfCharacters = results.map(character => {
+    const listOfCharacters = this.state.characters.map(character => {
       return <li key={character.name}><Character character={character}/></li>;
     });
+
     return (
       <ul>
         {listOfCharacters}
