@@ -4,7 +4,10 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "start": "webpack-dev-server --hot --mode development --devtool eval-source",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
