@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App  1`] = `
+Array [
+  <h1>
+     
+    Jon Snow
+     
+  </h1>,
+  <h2>
+     
+    Alive
+     
+  </h2>,
+  <h2>
+     
+    Male
+     
+  </h2>,
+  <h2>
+     
+    N/A
+     
+  </h2>,
+  <h2>
+     
+     
+  </h2>,
+  <ul>
+    <li>
+       
+      <h1>
+         
+         
+      </h1>
+      <h2>
+         
+         
+      </h2>
+      <h2>
+         
+         
+      </h2>
+      <h2>
+         
+         
+      </h2>
+      <h2>
+         
+         
+      </h2>
+       
+    </li>
+  </ul>,
+  <h1>
+     Hello 
+  </h1>,
+]
+`;

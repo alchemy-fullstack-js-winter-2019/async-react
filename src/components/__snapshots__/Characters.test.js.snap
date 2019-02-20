@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Characters shows the characters 1`] = `
+<ul>
+  <li>
+     
+    <h1>
+       
+       
+    </h1>
+    <h2>
+       
+       
+    </h2>
+    <h2>
+       
+       
+    </h2>
+    <h2>
+       
+       
+    </h2>
+    <h2>
+       
+       
+    </h2>
+     
+  </li>
+</ul>
+`;
