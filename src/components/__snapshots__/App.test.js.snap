@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App matches a snapshot 1`] = `
+Array [
+  <header>
+    <h1>
+      Rick and Morty Pt 2
+    </h1>
+    <p>
+      I have never seen the show...
+    </p>
+  </header>,
+  <p>
+    Rick Sanchez
+    , 
+    Alive
+    , 
+    Human
+    , 
+    Male
+  </p>,
+]
+`;
