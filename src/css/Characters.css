@@ -1,0 +1,16 @@
+.characters {
+  font-family: sans-serif;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background: black;
+    color: white;
+    padding: 20px;
+    
+    li {
+      list-style: none;
+      padding: 20px;
+    }
+  }
+}

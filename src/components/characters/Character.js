@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 function Character({ character }) {
-  console.log(character);
   const { name, status, species, gender } = character;
   return (
     <Fragment>

@@ -1,32 +1,21 @@
 import React, { PureComponent, Fragment } from 'react';
 // import PropTypes from 'prop-types';
 import Character from './Character';
+import styles from '../../css/Characters.css';
+import { getCharacters } from '../../services/rickAndMortyApi.js';
 
 class Characters extends PureComponent {
   state = {
-    characters: [{
-      name: 'Rick Sanchez',
-      status: 'Alive',
-      species: 'Human',
-      gender: 'Male'
-    },
-    {
-      name: 'Morty Smith',
-      status: 'Alive',
-      species: 'Human',
-      gender: 'Male'
-    },
-    {
-      name: 'Summer Smith',
-      status: 'Alive',
-      species: 'Human',
-      gender: 'Female'
-    }]
+    characters: []
   }
 
   componentDidMount() {
     console.log('mounted');
-    
+    getCharacters()
+      .then(response => {
+        console.log(response);
+        this.setState({ characters: response.results });
+      });
   }
   
   render() {
@@ -37,11 +26,12 @@ class Characters extends PureComponent {
     });
     return (
       <Fragment>
-        <h1>Characters!</h1>
-        <ul>
-          {characters}
-
-        </ul>
+        <div className={styles.characters}>
+          <h1>Characters!</h1>
+          <ul>
+            {characters}
+          </ul>
+        </div>
       </Fragment>
     );
   }

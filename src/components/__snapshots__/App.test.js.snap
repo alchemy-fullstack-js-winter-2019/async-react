@@ -10,37 +10,41 @@ Array [
       I have never seen the show...
     </p>
   </header>,
-  <h1>
-    Characters!
-  </h1>,
-  <ul>
-    <li>
-      Rick Sanchez
-      , 
-      Alive
-      , 
-      Human
-      , 
-      Male
-    </li>
-    <li>
-      Morty Smith
-      , 
-      Alive
-      , 
-      Human
-      , 
-      Male
-    </li>
-    <li>
-      Summer Smith
-      , 
-      Alive
-      , 
-      Human
-      , 
-      Female
-    </li>
-  </ul>,
+  <div
+    className="characters"
+  >
+    <h1>
+      Characters!
+    </h1>
+    <ul>
+      <li>
+        Rick Sanchez
+        , 
+        Alive
+        , 
+        Human
+        , 
+        Male
+      </li>
+      <li>
+        Morty Smith
+        , 
+        Alive
+        , 
+        Human
+        , 
+        Male
+      </li>
+      <li>
+        Summer Smith
+        , 
+        Alive
+        , 
+        Human
+        , 
+        Female
+      </li>
+    </ul>
+  </div>,
 ]
 `;
