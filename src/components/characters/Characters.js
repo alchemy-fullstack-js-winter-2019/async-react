@@ -9,12 +9,12 @@ export default class Characters extends PureComponent {
   state = { 
     characters: []
   }
-  
-  componentDidMount(){
 
+  componentDidMount(){
+    this.setState({ characters: results });
   }
   render() {
-    const listOfCharacters = results.map(character => {
+    const listOfCharacters = this.state.characters.map(character => {
       return <li key={character.name}><Character character={character}/></li>;
     });
     return (
