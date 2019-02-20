@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character matches a snapshot 1`] = `
+<ul>
+  <li>
+    fluffy
+  </li>
+  <li>
+    alive
+  </li>
+  <li>
+    dog
+  </li>
+  <li>
+    female
+  </li>
+</ul>
+`;
