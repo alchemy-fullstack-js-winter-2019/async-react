@@ -1,11 +1,11 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
+import Header from './Header';
 
-class App extends PureComponent {
+class App extends Component {
   render() {
     return (
       <Fragment>
-        <h1>Async React</h1>
-        <p>async react</p>
+        <Header />
       </Fragment>
     );
   }
