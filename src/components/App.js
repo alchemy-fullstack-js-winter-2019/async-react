@@ -2,11 +2,13 @@ import React, { Fragment, PureComponent } from 'react';
 import 'normalize-css';
 import Header from './header/Header';
 import Character from './characters/Character';
+import Characters from './characters/Characters';
 
 export default class App extends PureComponent {
   state = {
     
   }
+
   render() {
     const character = {
       name: 'Black Widow',
@@ -18,6 +20,7 @@ export default class App extends PureComponent {
       <Fragment>
         <Header />
         <Character character={character} />
+        <Characters />
       </Fragment>
     );
   }

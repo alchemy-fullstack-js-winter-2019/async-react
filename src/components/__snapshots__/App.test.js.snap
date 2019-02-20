@@ -5,19 +5,17 @@ Array [
   <h1>
     Rick and Morty CHARACTERS
   </h1>,
-  <tr>
-    <td>
-      Black Widow
-    </td>
-    <td>
-      alive
-    </td>
-    <td>
-      human
-    </td>
-    <td>
-      female
-    </td>
-  </tr>,
+  <h2>
+    Black Widow
+  </h2>,
+  <p>
+    alive
+  </p>,
+  <p>
+    human
+  </p>,
+  <p>
+    female
+  </p>,
 ]
 `;

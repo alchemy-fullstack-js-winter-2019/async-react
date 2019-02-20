@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 function Character({ character }) {
   const { name, status, species, gender } = character;
   return (
-    <tr>
-      <td>{name}</td>
-      <td>{status}</td>
-      <td>{species}</td>
-      <td>{gender}</td>
-    </tr>
-     
+    <Fragment>
+      <h2>{name}</h2>
+      <p>{status}</p>
+      <p>{species}</p>
+      <p>{gender}</p>
+    </Fragment>
   );
 }
 

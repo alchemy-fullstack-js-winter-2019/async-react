@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Character matches a snapshot 1`] = `
-<tr>
-  <td>
+Array [
+  <h2>
     Black Widow
-  </td>
-  <td>
+  </h2>,
+  <p>
     alive
-  </td>
-  <td>
+  </p>,
+  <p>
     human
-  </td>
-  <td>
+  </p>,
+  <p>
     female
-  </td>
-</tr>
+  </p>,
+]
 `;
