@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<h1>
+  My list of things
+</h1>
+`;
+
+exports[`App matches a snapshot 1`] = `
+<h1>
+  My list of things
+</h1>
+`;
