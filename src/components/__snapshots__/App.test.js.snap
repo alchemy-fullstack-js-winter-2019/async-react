@@ -1,21 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `
-Array [
-  <h1>
-    Header
-  </h1>,
-  <h1>
-    Async React
-  </h1>,
-]
-`;
-
 exports[`App matches a snapshot 1`] = `
 Array [
   <h1>
     Header
   </h1>,
+  <h2>
+    teonna
+  </h2>,
+  <h4>
+    alive
+  </h4>,
+  <h4>
+    human
+  </h4>,
+  <h4>
+    female
+  </h4>,
   <h1>
     Async React
   </h1>,
