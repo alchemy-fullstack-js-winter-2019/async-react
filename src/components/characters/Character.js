@@ -1,14 +1,18 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../css/App.css';
 
 function Character({ character }) {
-  const { name, status, species, gender } = character;
+  const { name, status, species, gender, image } = character;
   return (
     <Fragment>
       <h2>{name}</h2>
-      <p>{status}</p>
-      <p>{species}</p>
-      <p>{gender}</p>
+      <img src={image}/>
+      <div className={styles.info}>
+        <p>{status}</p>
+        <p>{species}</p>
+        <p>{gender}</p>
+      </div>
     </Fragment>
   );
 }

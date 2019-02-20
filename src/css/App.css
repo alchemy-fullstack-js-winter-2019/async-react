@@ -31,6 +31,12 @@ li {
   color: white;
 }
 
+.info {
+  background: white;
+  width: 100%;
+  color: navy;
+}
+
 * {
-  font-family: 'tahoma';
+  font-family: 'montserrat';
 }
