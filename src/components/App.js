@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react';
 import 'normalize-css';
+import '../css/App.css';
 import Header from './header/Header';
-import Character from './characters/Character';
 import Characters from './characters/Characters';
 
 export default class App extends PureComponent {
@@ -10,16 +10,9 @@ export default class App extends PureComponent {
   }
 
   render() {
-    const character = {
-      name: 'Black Widow',
-      status: 'alive',
-      species: 'human',
-      gender: 'female'
-    };
     return (
       <Fragment>
         <Header />
-        <Character character={character} />
         <Characters />
       </Fragment>
     );

@@ -17,7 +17,7 @@ export default class Characters extends React.PureComponent {
 
   render() {
     const listOfCharacters = results.map(character => {
-      return <li key={character}><Character character={character}/></li>;
+      return <li key={character.name}><Character character={character}/></li>;
     });
     return (
       <ul>
