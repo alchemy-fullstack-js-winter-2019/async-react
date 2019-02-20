@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Character from './characters/Character';
+import Characters from './characters/Characters';
 
 
 export default class App extends Component {
   
   render() {
-    const character = {
-      name: 'teonna',
-      status: 'alive',
-      species: 'human',
-      gender: 'female'
-    };
     return (
       <>
         <Header />
-        <Character character={character} />
+        <Characters />
         <h1>Async React</h1>
       </>
     );
