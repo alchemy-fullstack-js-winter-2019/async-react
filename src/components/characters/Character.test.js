@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Character from './Characters';
+import Character from './Character';
 
 describe('Character', () => {
   it('matches a snapshot', () => {
@@ -13,6 +13,6 @@ describe('Character', () => {
     };
     const tree = renderer.create(
       <Character character ={character} />).toJSON();
-      expect(tree).toMatchSnapshot();
-  })
-})
+    expect(tree).toMatchSnapshot();
+  });
+});
