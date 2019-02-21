@@ -20,8 +20,11 @@ export const getLocations = (page) => {
       origin: null
     }
   })
-    .then(response => response.json());
-  
+    .then(response => response.json())
+    .then(res => ({
+      totalPages: res.info.pages,
+      results: res.results
+    }));
 };
 
 
