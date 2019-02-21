@@ -4,11 +4,12 @@ import { getCharacters } from '../../services/rickAndMortyApi';
 
 export default class Characters extends PureComponent {
   state = {
-    characters: []
+    characters: [],
+    page: 1
   }
 
   componentDidMount() {
-    getCharacters()
+    getCharacters(1)
       .then(res => this.setState({ characters: res.results }));
   }
 

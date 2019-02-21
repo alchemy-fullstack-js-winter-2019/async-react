@@ -7,10 +7,10 @@ export default class Character extends PureComponent {
   }
 
   render() {
-    const { img, name, status, species, gender } = this.props.character;
+    const { image, name, status, species, gender } = this.props.character;
     return (
       <li>
-        <img src={img}/>
+        <img src={image}/>
         <p>{name}</p>
         <p>Status: {status}</p>
         <p>Species: {species}</p>
