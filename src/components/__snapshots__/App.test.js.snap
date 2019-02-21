@@ -2,7 +2,9 @@
 
 exports[`App matches a snapshot 1`] = `
 Array [
-  <header>
+  <header
+    className="header"
+  >
     <h1>
       Rick and Morty Pt 2
     </h1>
@@ -11,11 +13,11 @@ Array [
     </p>
   </header>,
   "1",
-  <button
-    onClick={[Function]}
-  >
-    Page Up
-  </button>,
+  <h1>
+    Locations!
+  </h1>,
+  <ul />,
+  "1",
   <div
     className="characters"
   >

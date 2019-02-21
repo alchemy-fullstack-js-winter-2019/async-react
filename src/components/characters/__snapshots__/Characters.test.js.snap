@@ -1,12 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Characters matches a snapshot 1`] = `
-<div
-  className="characters"
->
-  <h1>
-    Characters!
-  </h1>
-  <ul />
-</div>
+Array [
+  "1",
+  <div
+    className="characters"
+  >
+    <h1>
+      Characters!
+    </h1>
+    <ul />
+  </div>,
+]
 `;
