@@ -8,3 +8,8 @@ li {
   position: relative;
   width: 50%;
 }
+
+h2 {
+  font-size: 1.1em;
+  width: 250px;
+}

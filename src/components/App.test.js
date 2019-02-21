@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import App from './App';
 
 
-jest.mock('./services/rickAndMortyApi.js');
+jest.mock('../services/rickAndMortyApi.js');
 
 describe('App', () => {
   it('matches a snapshot', () => {

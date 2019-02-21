@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Character from './Character';
-import { getCharacters } from '../services/rickAndMortyApi.js';
-import styles from '../css/Characters.css';
+import { getCharacters } from '../../services/rickAndMortyApi';
+import { withPaging } from '../paging/Paging';
 
 
-export default class Characters extends PureComponent {
+export class Characters extends PureComponent {
   static propTypes = {
     page: PropTypes.number,
-    updateTotalPages: PropTypes.func.isRequired
+    updateTotalPages: PropTypes.func
   };
 
   static defaultProps ={
@@ -20,6 +20,7 @@ export default class Characters extends PureComponent {
   };
 
   fetchCharacters = () => {
+    console.log('props', this.props.updateTotalPages);
     getCharacters(this.props.page)
       .then(response => {
         this.props.updateTotalPages(response.totalPages);
@@ -46,7 +47,7 @@ export default class Characters extends PureComponent {
     });
     return (
         <>
-        <ul className={styles}> 
+        <ul> 
           {characters}
         </ul>
       </>
@@ -54,3 +55,4 @@ export default class Characters extends PureComponent {
   }
 }
 
+export const CharactersWithPaging = withPaging(Characters);

@@ -1,17 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer'; 
-import Character from './characters/Character';
+import Character from './Character';
 
 describe('Character', () => {
   it('shows the character', () => {
-    const character = {
-      name: 'Jon Snow',
-      gender: 'Male', 
-      status: 'Alive', 
-      house: 'N/A'
-    };
+
     const tree = renderer.create(
-      <Character character={character} />
+      <Character name='marcy' status='human' gender='gemale' species='human' image='image'  />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

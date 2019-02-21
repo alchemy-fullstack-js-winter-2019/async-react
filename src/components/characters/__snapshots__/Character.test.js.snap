@@ -4,20 +4,26 @@ exports[`Character shows the character 1`] = `
 Array [
   <h2>
      
+    marcy
      
   </h2>,
   <h3>
      
+    human
      
   </h3>,
   <h3>
      
+    gemale
      
   </h3>,
   <h3>
      
+    human
      
   </h3>,
-  <img />,
+  <img
+    src="image"
+  />,
 ]
 `;
