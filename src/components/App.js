@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Characters from './characters/Characters';
+import Paging from './paging/Paging';
 
 export default class App extends Component {
   state = {
@@ -24,10 +25,12 @@ export default class App extends Component {
     return (
       <>
         <h1>My list of things</h1>
-        <button onClick={this.increaseCount}>Next Page</button>
-        <button onClick={this.decreaseCount}>Prev Page</button>
-        <p>Current page: {currentPage}</p>
-        {totalPages && <p>Total pages: {totalPages}</p>}
+        <Paging 
+          currentPage={currentPage}
+          totalPages={totalPages}
+          increaseCount={this.increaseCount}
+          decreaseCount={this.decreaseCount}
+        />
         <Characters
           currentPage={currentPage}
           updateTotalPages={this.updateTotalPages}
