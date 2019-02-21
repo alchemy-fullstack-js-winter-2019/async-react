@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 // eslint-disable-next-line no-undef
 module.exports = {
@@ -13,6 +14,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html' }), 
     new CleanWebpackPlugin('./dist'),
+    new DashboardPlugin()
   ],
   module: {
     rules:[
