@@ -2,11 +2,14 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 function Character({ character }) {
-  const { name, status, species, gender } = character;
+  const { name, status, species, gender, image } = character;
   return (
     <Fragment>
-      <p>{name}</p> 
-      <p>{status}</p> <p>{species}</p> <p>{gender}</p>
+      <img src={image} />
+      <p><span>Name:</span> {name}</p> 
+      <p><span>Status:</span> {status}</p> 
+      <p><span>Species:</span> {species}</p> 
+      <p><span>Gender:</span> {gender}</p>
     </Fragment>
   );
 }

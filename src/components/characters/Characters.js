@@ -3,6 +3,7 @@ import Character from './Character';
 import styles from '../../css/Characters.css';
 import { getCharacters } from '../../services/rickAndMortyApi.js';
 import PropTypes from 'prop-types';
+import { withPaging } from '../Paging';
 
 class Characters extends PureComponent {
   static propTypes = {
@@ -55,4 +56,4 @@ class Characters extends PureComponent {
   }
 }
 
-export default Characters;
+export default withPaging(Characters);
