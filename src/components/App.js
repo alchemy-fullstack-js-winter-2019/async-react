@@ -14,12 +14,18 @@ export default class App extends Component {
   // })
   
 
-  handleChange = () => {
+  pageForward = () => {
     const { currentPage, totalPages } = this.state;
     if(currentPage < totalPages) {
       this.setState({ currentPage: currentPage + 1 });
-
     }
+  }
+  pageBackward = () => {
+    const { currentPage, totalPages  } = this.state;
+    if(currentPage > 1) {
+      this.setState({ currentPage: currentPage -  1 });
+    }
+    
   }
   
   render() {
@@ -29,10 +35,10 @@ export default class App extends Component {
         <Header />
         <h4>{currentPage}/{totalPages}</h4>
         
-        <button>BACK</button>
-        <button onClick={this.handleChange} >NEXT</button>
+        <button onClick={this.pageBackward}>BACK</button>
+        <button onClick={this.pageForward} >NEXT</button>
         <Characters />
       </>
     );
   }
-};
+}
