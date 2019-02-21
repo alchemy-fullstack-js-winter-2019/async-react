@@ -5,17 +5,24 @@ Array [
   <h1>
     Rick and Morty CHARACTERS
   </h1>,
-  <button>
-    Back
-  </button>,
-  <p>
-    
-     / 
-    
-  </p>,
-  <button>
-    Forward
-  </button>,
+  <div
+    className="buttons"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Back
+    </button>
+    <p>
+      1
+       / 
+    </p>
+    <button
+      onClick={[Function]}
+    >
+      Forward
+    </button>
+  </div>,
   <ul />,
 ]
 `;
