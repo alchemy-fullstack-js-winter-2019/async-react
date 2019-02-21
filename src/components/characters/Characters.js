@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import Character from './Character';
 import { getCharacters } from '../../services/rickAndMortyApi';
 
@@ -27,7 +26,9 @@ export default class Characters extends PureComponent {
     return (
 
       <table>
-        {characters}
+        <tbody>
+          {characters}
+        </tbody>
       </table>
     );
   }
