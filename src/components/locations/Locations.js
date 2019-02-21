@@ -2,8 +2,9 @@ import React from 'react';
 import Location from './Location';
 import { getLocations } from '../../services/rickAndMortyApi';
 import PropTypes from 'prop-types';
+import { withPaging } from '../paging/Paging';
 
-export default class Locations extends React.PureComponent {
+class Locations extends React.PureComponent {
   state = {
     locations: [] 
   }
@@ -17,7 +18,6 @@ export default class Locations extends React.PureComponent {
     const { currentPage, updateTotalPages } = this.props;
     getLocations(currentPage)
       .then(response => {
-        console.log('RESPONSE', response);
         updateTotalPages(response.totalPages);
         this.setState({ locations: response.results });
       });
@@ -46,3 +46,5 @@ export default class Locations extends React.PureComponent {
     );
   }
 }
+
+export default withPaging(Locations);

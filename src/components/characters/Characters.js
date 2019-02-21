@@ -2,8 +2,9 @@ import React from 'react';
 import Character from './Character';
 import { getCharacters } from '../../services/rickAndMortyApi';
 import PropTypes from 'prop-types';
+import { withPaging } from '../paging/Paging';
 
-export default class Characters extends React.PureComponent {
+class Characters extends React.PureComponent {
   state = {
     characters: [] 
   }
@@ -17,7 +18,6 @@ export default class Characters extends React.PureComponent {
     const { currentPage, updateTotalPages } = this.props;
     getCharacters(currentPage)
       .then(response => {
-        console.log('RESPONSE', response);
         updateTotalPages(response.totalPages);
         this.setState({ characters: response.results });
       });
@@ -46,4 +46,6 @@ export default class Characters extends React.PureComponent {
     );
   }
 }
+
+export default withPaging(Characters);
 
