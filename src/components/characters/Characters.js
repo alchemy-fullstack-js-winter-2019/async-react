@@ -1,20 +1,41 @@
 import React, { PureComponent } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { getCharacters } from '../../services/rickAndMortyApi';
 import Character from '../characters/Character';
+import withPaging from '../Paging';
 
-export default class Characters extends PureComponent {
+class Characters extends PureComponent {
+  static propTypes = {
+    page: PropTypes.number,
+    updateTotalPages: PropTypes.func.isRequired
+  };
+
+  static defaultProps = {
+    page: 1
+  };
+
   state = {
     characters: []
-
   };
-  componentDidMount() {
-    getCharacters()
-      .then(response => {
-        this.setState({ characters: response.results });
 
+  fetchCharacters = () => {
+    getCharacters(this.props.page)
+      .then(response => {
+        this.props.updateTotalPages(response.totalPages);
+        this.setState({ characters: response.results });
       });
+  };
+
+  componentDidMount() {
+    this.fetchCharacters();
   }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.page !== this.props.page) {
+      this.fetchCharacters();
+    }
+  }
+
   render() {
     const characters = this.state.characters.map(character => {
       return (
@@ -30,3 +51,4 @@ export default class Characters extends PureComponent {
     );
   }  
 }
+export const CharactersWithPaging = withPaging(Characters);
