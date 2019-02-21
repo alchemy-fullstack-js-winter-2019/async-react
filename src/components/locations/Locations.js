@@ -18,8 +18,8 @@ class Locations extends PureComponent {
     page: 1
   }
 
-  fetchLocations() {
-    getLocations()
+  fetchLocations = () => {
+    getLocations(this.props.page)
       .then(response => {
         this.props.updateTotalPages(response.totalPages);
         this.setState({ locations: response.results });
@@ -44,7 +44,7 @@ class Locations extends PureComponent {
     });
     return (
       <Fragment>
-        <h1>Locations</h1>
+        <h1>Locations!</h1>
         <ul>
           {locations}
         </ul>

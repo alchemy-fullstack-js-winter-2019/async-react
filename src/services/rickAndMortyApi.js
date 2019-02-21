@@ -7,8 +7,8 @@ export const getCharacters = (page) => {
     }));
 };
 
-export const getLocations = () => {
-  return fetch('https://rickandmortyapi.com/api/location/')
+export const getLocations = (page) => {
+  return fetch(`https://rickandmortyapi.com/api/location/?page=${page}`)
     .then(res => res.json())
     .then(json => ({
       locationTotalPages: json.info.pages,
