@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import Character from './Character';
 import { getCharacters } from '../../services/rickAndMortyApi';
-
+import styles from './Characters.css';
 
 export default class Characters extends PureComponent {
   state = { 
@@ -15,10 +15,12 @@ export default class Characters extends PureComponent {
 
       });
   }
+
   render() {
     const listOfCharacters = this.state.characters.map(character => {
-      return <li key={character.name}><Character character={character}/></li>;
+      return <li key={character.name} styles={styles.li}><Character character={character}/></li>;
     });
+
     return (
       <ul>{listOfCharacters}</ul>
     );
