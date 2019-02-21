@@ -1,16 +1,39 @@
+.container {
+  display: flex;
+}
+
 h1 {
   text-align: center;
-  font-size: 4em;
+  font-size: 5em;
   margin: 0;
   text-shadow: 2px 2px blue;
-  padding: 10px;
+  padding: 20px;
   background: black;
   color: white;
 }
 
+.characters {
+  padding: 0 10px;
+  margin: 0;
+}
+
+.locations {
+  padding: 0 10px;
+  margin: 0;
+}
+
+.subTitle {
+  text-align: center;
+  font-size: 3em;
+  margin: 0;
+  text-shadow: 2px 2px blue;
+  padding: 10px;
+color: black;
+}
+
 ul {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   list-style-type: none;
   padding: 0;
   grid-column-gap: 10px;
@@ -44,13 +67,19 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 20px;
+  margin: 0;
+  padding-bottom: 15px;
+  border-bottom: 5px solid navy;
 }
 
 button {
   margin-right: 10px;
   margin-left: 10px;
   border-radius: 5px;
+}
+
+.pageInfo {
+  color: black;
 }
 
 * {

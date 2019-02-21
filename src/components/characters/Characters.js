@@ -1,9 +1,9 @@
-import React, {} from 'react';
+import React from 'react';
 import Character from './Character';
 import { getCharacters } from '../../services/rickAndMortyApi';
 import PropTypes from 'prop-types';
 
-export default class Characters extends React.Component {
+export default class Characters extends React.PureComponent {
   state = {
     characters: [] 
   }

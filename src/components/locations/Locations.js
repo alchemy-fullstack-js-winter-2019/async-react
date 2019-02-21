@@ -1,9 +1,9 @@
-import React, {} from 'react';
+import React from 'react';
 import Location from './Location';
 import { getLocations } from '../../services/rickAndMortyApi';
 import PropTypes from 'prop-types';
 
-export default class Locations extends React.Component {
+export default class Locations extends React.PureComponent {
   state = {
     locations: [] 
   }

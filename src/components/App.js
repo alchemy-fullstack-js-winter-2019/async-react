@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import 'normalize-css';
-import '../css/App.css';
+import styles from '../css/App.css';
 import Header from './header/Header';
 import Characters from './characters/Characters';
 import Locations from './locations/Locations';
@@ -34,13 +34,15 @@ export default class App extends PureComponent {
     return (
       <Fragment>
         <Header />
-        <div>
-          <Paging totalPages={totalPages} currentPage={currentPage} updatePageForward={this.updatePageForward} updatePageBackward={this.updatePageBackward}/>
-          <Characters currentPage={currentPage} updateTotalPages={this.updateTotalPages}/>
-        </div>
-        <div>
-          <Paging totalPages={totalPages} currentPage={currentPage} updatePageForward={this.updatePageForward} updatePageBackward={this.updatePageBackward}/>
-          <Locations currentPage={currentPage} updateTotalPages={this.updateTotalPages}/>
+        <div className={styles.container}>
+          <div className={styles.characters}>
+            <Paging title='Characters' totalPages={totalPages} currentPage={currentPage} updatePageForward={this.updatePageForward} updatePageBackward={this.updatePageBackward}/>
+            <Characters currentPage={currentPage} updateTotalPages={this.updateTotalPages}/>
+          </div>
+          <div className={styles.locations}>
+            <Paging title='Locations' totalPages={totalPages} currentPage={currentPage} updatePageForward={this.updatePageForward} updatePageBackward={this.updatePageBackward}/>
+            <Locations currentPage={currentPage} updateTotalPages={this.updateTotalPages}/>
+          </div>
         </div>
       </Fragment>
     );
