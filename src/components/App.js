@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
+import Characters from './characters/Characters';
 
 export default class App extends Component {
 
+  constructor(props) {
+    super(props);
+
+  }
+
+  
+
+
   render() {
-    return <h1>My List of things</h1>;
+    return (
+      <Characters />
+    );
   }
 }

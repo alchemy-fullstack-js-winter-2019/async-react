@@ -1,13 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from './App';
+import Characters from './Characters';
 
 describe('App', () => {
-  it('Snapshot matches App', () => {
+  it('matches a snapshot', () => {
     const tree = renderer.create(
-      <App />
+      <Characters />
     ).toJSON();
   
     expect(tree).toMatchSnapshot();
   });
-});
+}); 

@@ -1,7 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App  1`] = `
-<h1>
-  My List of things
-</h1>
+exports[`App Snapshot matches App 1`] = `
+Array [
+  <h1>
+    Character
+  </h1>,
+  <ul>
+    <li>
+      Rick Sanchez
+    </li>
+    <li>
+      Alive
+    </li>
+    <li>
+      Human
+    </li>
+    <li>
+      Male
+    </li>
+  </ul>,
+]
 `;
