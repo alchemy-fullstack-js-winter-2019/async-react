@@ -7,7 +7,7 @@
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "jest --verbose --runInBand --detectOpenHandles --passWithNoTests",
-    "test:watch": "jest --watch --verbose --runInBand --detectOpenHandles",
+    "test:watch": "jest --watch --verbose --runInBand --detectOpenHandles --updateSnapshot",
     "start": "webpack-dev-server --hot --mode development --devtool eval-source-map",
     "build": "webpack -p"
   },
