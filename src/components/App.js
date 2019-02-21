@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Characters from './characters/Characters';
-
+import Paging from './paging/Paging';
 
 export default class App extends Component {
   state = {
     currentPage: 1,
-    totalPages: 1
+    totalPages: 25
   }
 
   pageForward = () => {
@@ -29,9 +29,12 @@ export default class App extends Component {
     return (
       <>
         <Header />
-          {currentPage > 1 && <button onClick={this.pageBackward}>BACK</button>}
-          <span>{currentPage} of {totalPages}</span>
-          {currentPage < totalPages && <button onClick={this.pageForward} >NEXT</button>}
+        <Paging 
+          currentPage={currentPage}
+          totalPages = {totalPages}
+          pageForward={this.pageForward}
+          pageBackward={this.pageBackward}
+        />
         <Characters 
           page={currentPage}
           updateTotalPages={this.updateTotalPages}
@@ -40,3 +43,5 @@ export default class App extends Component {
     );
   }
 }
+
+

@@ -40,7 +40,7 @@ export default class Characters extends PureComponent {
 
   render() {
     const listOfCharacters = this.state.characters.map(character => {
-      return <li key={character.name} styles={styles.li}><Character character={character}/></li>;
+      return <li key={character.id} styles={styles.li}><Character character={character}/></li>;
     });
 
     return (
