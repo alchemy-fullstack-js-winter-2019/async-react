@@ -12,23 +12,11 @@ Array [
       Async React App
     </h1>
   </header>,
-  <button
-    id="next-btn"
-    onClick={[Function]}
-  >
-    Next
-  </button>,
   <span>
     1
      of 
-    25
+    1
   </span>,
-  <button
-    id="prev-btn"
-    onClick={[Function]}
-  >
-    Previous
-  </button>,
   <div />,
 ]
 `;

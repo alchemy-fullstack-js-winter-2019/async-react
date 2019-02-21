@@ -5,11 +5,14 @@ import { getCharacters } from '../../services/rickAndMortyApi';
 
 export default class Characters extends PureComponent {
   static propTypes = {
-    page: PropTypes.number
+    page: PropTypes.number,
+    updateTotalPages: PropTypes.func.isRequired
   };
+
   static defaultProps = {
     page: 1
   }
+
   state = {
     characters: []
   }
@@ -17,6 +20,7 @@ export default class Characters extends PureComponent {
   fetchCharacters = () => {
     getCharacters(this.props.page)
       .then(response => {
+        this.props.updateTotalPages(response.totalPages);
         this.setState({ characters: response.results });
       });
   }
