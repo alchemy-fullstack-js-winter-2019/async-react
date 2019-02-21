@@ -9,4 +9,4 @@ This is a React app that allows users browse the Rick and Morty API! They can pa
 ### Start the App on Local Host
 *npm run start*
 
-![image of app]()
+![image of app](mockup.jpg)

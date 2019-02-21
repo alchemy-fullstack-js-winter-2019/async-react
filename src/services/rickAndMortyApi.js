@@ -1,5 +1,4 @@
 const getCharacters = (currentPage) => {
-  console.log(currentPage);
   return fetch(`https://rickandmortyapi.com/api/character/?page=${currentPage}`, {
     method: 'GET',
     headers: {
@@ -16,7 +15,6 @@ const getCharacters = (currentPage) => {
 };
 
 const getLocations = (currentPage) => {
-  console.log(currentPage);
   return fetch(`https://rickandmortyapi.com/api/location/?page=${currentPage}`, {
     method: 'GET',
     headers: {
