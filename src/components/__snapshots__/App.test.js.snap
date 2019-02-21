@@ -5,11 +5,18 @@ Array [
   <h1>
     Header
   </h1>,
-  <span>
-    1
-     of 
-    1
-  </span>,
+  <div>
+    <span>
+      1
+       of 
+      25
+    </span>
+    <button
+      onClick={[Function]}
+    >
+      NEXT
+    </button>
+  </div>,
   <ul />,
 ]
 `;

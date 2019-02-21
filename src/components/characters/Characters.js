@@ -3,8 +3,9 @@ import Character from './Character';
 import { getCharacters } from '../../services/rickAndMortyApi';
 import PropTypes from 'prop-types';
 import styles from './Characters.css';
+import { withPaging } from '../paging/Paging';
 
-export default class Characters extends PureComponent {
+class Characters extends PureComponent {
   static propTypes = {
     page: PropTypes.number,
     updateTotalPages: PropTypes.func.isRequired
@@ -18,13 +19,12 @@ export default class Characters extends PureComponent {
     characters: []
   }
   
-  
   fetchCharacters() {
     getCharacters(this.props.page)
       .then(response => {
         this.setState({ characters: response.results });
         //response.totalPages or ???
-        this.props.updateTotalPages({ totalPages: response.totalPages });
+        this.props.updateTotalPages(response.totalPages);
       });
   }
 
@@ -49,4 +49,5 @@ export default class Characters extends PureComponent {
   }
 }
 
+export default withPaging(Characters);
 
