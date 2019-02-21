@@ -6,7 +6,7 @@ class App extends Component {
 
   state = {
     currentPage: 1,
-    totalPages: 25
+    totalPages: 1
   };
 
   updatePageForward = () => {
@@ -21,6 +21,9 @@ class App extends Component {
     this.setState({ currentPage: currentPage - 1 });
   }
 
+  updateTotalPages = totalPages => {
+    this.setState({ totalPages });
+  }
 
 
   render() {
@@ -34,7 +37,7 @@ class App extends Component {
           <button onClick={this.updatePageBackward}>BACK</button>
           <button onClick={this.updatePageForward}>NEXT</button>
         </div>
-        <Characters />
+        <Characters page={currentPage} updateTotalPages={this.updateTotalPages}/>
       </>
     );
   }
