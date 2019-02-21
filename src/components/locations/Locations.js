@@ -2,21 +2,38 @@ import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { getLocations } from '../../services/rickAndMortyApi';
 import Location from './Location';
+import { withPaging } from '../Paging';
 
 class Locations extends PureComponent {
   static propTypes = {
-    locationPage: PropTypes.number
+    page: PropTypes.number,
+    updateTotalPages: PropTypes.func.isRequired
   }
 
   state = {
     locations: []
   }
 
-  componentDidMount() {
+  static defaultProps = {
+    page: 1
+  }
+
+  fetchLocations() {
     getLocations()
       .then(response => {
+        this.props.updateTotalPages(response.totalPages);
         this.setState({ locations: response.results });
       });
+  }
+
+  componentDidMount() {
+    this.fetchLocations();
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.page !== this.props.page) {
+      this.fetchLocations();
+    }
   }
 
   render() {
@@ -36,4 +53,4 @@ class Locations extends PureComponent {
   }
 }
 
-export default Locations;
+export default withPaging(Locations);

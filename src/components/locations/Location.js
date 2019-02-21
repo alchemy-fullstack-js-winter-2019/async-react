@@ -2,9 +2,12 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 function Location({ location }) {
+  const { name, dimension, type } = location;
   return (
     <Fragment>
-      <p>{location.name}</p>
+      <p>{name}</p>
+      <p>{dimension}</p>
+      <p>{type}</p>
     </Fragment>
   );
 }
