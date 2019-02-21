@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Characters from './characters/Characters';
+import Locations from './locations/locations';
 import styles from './App.css';
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
       <>
         <h1 className={styles.header}>Rick and Morty API</h1>       
         <Characters />
+        <Locations />
       </>
     );
   }
