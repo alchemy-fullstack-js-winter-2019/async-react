@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Character from './Character';
-import { getCharacters } from '../../services/rickAndMortyApi';
+import { getCharacters } from '../../services/__mocks__/rickAndMortyApi';
 import PropTypes from 'prop-types';
 import styles from './Characters.css';
 import { withPaging } from '../paging/Paging';

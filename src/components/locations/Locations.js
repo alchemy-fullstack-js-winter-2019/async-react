@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Location from './Location';
-import { getLocations } from '../../services/rickAndMortyApi';
+import { getLocations } from '../../services/__mocks__/rickAndMortyApi';
 import PropTypes from 'prop-types';
 import { withPaging } from '../paging/Paging';
 
@@ -22,7 +22,7 @@ class Locations extends PureComponent {
     getLocations(this.props.page)
       .then(response => {
         this.setState({ locations: response.results });
-        this.props.updateTotalPages(response.updateTotalPages);
+        this.props.updateTotalPages(response.totalPages);
       });
   }
 
