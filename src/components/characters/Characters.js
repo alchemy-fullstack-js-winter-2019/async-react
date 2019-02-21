@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Character from './Character';
+import Paging from '../paging/Paging';
 import { getCharacters } from '../../services/rickAndMortyApi';
 import './Characters.css';
 
@@ -12,6 +13,9 @@ export default class Characters extends PureComponent {
 
   static propTypes = {
     currentPage: PropTypes.number,
+    totalPages: PropTypes.number,
+    decrement: PropTypes.func.isRequired,
+    increment: PropTypes.func.isRequired,
     updateTotalPages: PropTypes.func.isRequired
   }
 
@@ -39,10 +43,20 @@ export default class Characters extends PureComponent {
       />;
     });
 
+    const { currentPage, totalPages, increment, decrement } = this.props;
+
     return (
-      <ul>
-        {charactersList}
-      </ul>
+      <>
+        <Paging
+          currentPage={currentPage}
+          totalPages={totalPages}
+          decrement={decrement}
+          increment={increment}
+        />
+        <ul>
+          {charactersList}
+        </ul>
+      </>
     );
   }
 }
