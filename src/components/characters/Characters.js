@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Character from './Character';
+import { withPaging } from '../paging/Paging';
 import { getCharacters } from '../../services/rickAndMortyApi';
 
 
-export default class Characters extends PureComponent {
+export class Characters extends PureComponent {
   static propTypes = {
     page: PropTypes.number,
     updateTotalPages: PropTypes.func.isRequired
@@ -53,3 +54,5 @@ export default class Characters extends PureComponent {
     );
   }
 }
+
+export const CharactersWithPaging = withPaging(Characters);
