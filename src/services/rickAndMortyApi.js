@@ -1,9 +1,5 @@
-export const getCharacters = () => {
-  return fetch('https://cors-anywhere.herokuapp.com/http://rickandmortyapi.com/api/character', {
-    headers: {
-      origin: null
-    }
-  })
+export const getCharacters = (page) => {
+  return fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
     .then(res => res.json())
     .then(json => ({
       totalPages: json.info.pages,
@@ -11,4 +7,4 @@ export const getCharacters = () => {
     }));
 };
 
-// We had to specify the headers because we're using the cors-anywhere in the http request
+// If using :: We had to specify the headers because we're using the cors-anywhere in the http request
