@@ -4,41 +4,15 @@ import styles from '../../css/Characters.css';
 import { getCharacters } from '../../services/rickAndMortyApi.js';
 import PropTypes from 'prop-types';
 import { withPaging } from '../Paging';
+import { withFetch } from '../fetch/Fetch';
 
 class Characters extends PureComponent {
   static propTypes = {
-    page: PropTypes.number,
-    updateTotalPages: PropTypes.func.isRequired
+    results: PropTypes.array.isRequired,
   }
 
-  static defaultProps = {
-    page: 1
-  }
-
-  state = {
-    characters: []
-  }
-
-  fetchCharacters() {
-    getCharacters(this.props.page)
-      .then(response => {
-        this.props.updateTotalPages(response.totalPages);
-        this.setState({ characters: response.results });
-      });
-  }
-  
-  componentDidMount() {
-    this.fetchCharacters();
-  }
-
-  componentDidUpdate(prevProps) {
-    if(prevProps.page !== this.props.page) {
-      this.fetchCharacters();
-    }
-  }
-  
   render() {
-    const characters = this.state.characters.map(c => {
+    const characters = this.props.results.map(c => {
       return (
         <li key={c.id}><Character character={c} /></li>
       );
@@ -56,4 +30,6 @@ class Characters extends PureComponent {
   }
 }
 
-export default withPaging(Characters);
+const FetchCharacter = withFetch(Characters)(getCharacters);
+
+export default withPaging(FetchCharacter);
