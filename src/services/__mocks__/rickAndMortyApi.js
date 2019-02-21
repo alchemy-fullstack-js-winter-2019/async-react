@@ -15,9 +15,22 @@ const results = [
   }
 ];
 
+const locationRes = [
+  { name: 'Earth', type: 'planet', dimension: '5' },
+  { name: 'Earth2', type: 'planet', dimension: '5' },
+  { name: 'Earth3', type: 'planet', dimension: '5' }
+];
+
 export const getCharacters = () => {
   return Promise.resolve({
     totalPages: 25,
     results
+  });
+};
+
+export const getLocations = () => {
+  return Promise.resolve({
+    totalPages: 25,
+    results: locationRes
   });
 };
