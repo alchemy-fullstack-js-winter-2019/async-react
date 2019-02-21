@@ -15,5 +15,6 @@ Array [
   <h1>
     My list of things
   </h1>,
+  <div />,
 ]
 `;

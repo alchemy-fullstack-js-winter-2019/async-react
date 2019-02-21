@@ -1,13 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from './App';
+import Characters from './Characters';
 
-jest.mock('../services/rickAndMortyApi.js');
+jest.mock('../../services/rickAndMortyApi.js');
 
-describe('App', () => {
+describe('Characters', () => {
   it('matches a snapshot', () => {
     const tree = renderer.create(
-      <App />
+      <Characters />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

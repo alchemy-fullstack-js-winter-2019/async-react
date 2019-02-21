@@ -2,8 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Character({ character }) {
+  const { name, status, species, gender } = character;
   return (
-    <h2 character={character}>Character component</h2>
+    <ul>
+      <li>{name}</li>
+      <li>{status}</li>
+      <li>{species}</li>
+      <li>{gender}</li>
+    </ul>
   );
 }
 
