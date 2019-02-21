@@ -3,26 +3,79 @@
 exports[`App matches a snapshot 1`] = `
 Array [
   <h1>
-    Rick and Morty CHARACTERS
+    Rick and Morty Api
   </h1>,
   <div
-    className="buttons"
+    className="container"
   >
-    <button
-      onClick={[Function]}
+    <div
+      className="characters"
     >
-      Back
-    </button>
-    <p>
-      1
-       / 
-    </p>
-    <button
-      onClick={[Function]}
+      <h2
+        className="subTitle"
+      />
+      <div
+        className="buttons"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Back
+        </button>
+        <p
+          className="pageInfo"
+        >
+          1
+           / 
+          1
+        </p>
+        <button
+          onClick={[Function]}
+        >
+          Forward
+        </button>
+      </div>
+      <div>
+        <h3>
+          Characters
+        </h3>
+        <ul />
+      </div>
+    </div>
+    <div
+      className="locations"
     >
-      Forward
-    </button>
+      <h2
+        className="subTitle"
+      />
+      <div
+        className="buttons"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Back
+        </button>
+        <p
+          className="pageInfo"
+        >
+          1
+           / 
+          1
+        </p>
+        <button
+          onClick={[Function]}
+        >
+          Forward
+        </button>
+      </div>
+      <div>
+        <h3>
+          Locations
+        </h3>
+        <ul />
+      </div>
+    </div>
   </div>,
-  <ul />,
 ]
 `;
