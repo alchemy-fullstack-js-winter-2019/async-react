@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Characters from './characters/Characters';
+import './App.css';
 
 export default class App extends Component {
   state = {
@@ -29,9 +30,11 @@ export default class App extends Component {
     const { currentPage, totalPages } = this.state;
     return (
       <>
-        <h1>Yo!</h1>
-        <p>Current Page: {currentPage}</p>
-        <p>Total Pages: {totalPages}</p>
+        <h1>Rick and Mort, Yo!</h1>
+        <header>
+          <p>Current Page: {currentPage}</p>
+          <p>Total Pages: {totalPages}</p>
+        </header>
         <button onClick={this.decrement}>{'<'}</button>
         <button onClick={this.increment}>{'>'}</button>
 
