@@ -3,9 +3,10 @@ import renderer from 'react-test-renderer';
 import App from './App';
 
 describe('App', () => {
-  const tree = renderer.create(
-    <App/>
-  ).toJSON();
-
-  expect(tree).toMatchSnapshot();
+  it('', () => {
+    const character = renderer.create(
+      <App/>
+    ).toJSON();
+    expect(character).toMatchSnapshot();
+  });
 });
