@@ -5,17 +5,20 @@ import PropTypes from 'prop-types';
 
 export default class Characters extends React.Component {
   state = {
-    characters: []
+    characters: [] 
   }
 
   static propTypes = {
-    currentPage: PropTypes.number.isRequired
+    currentPage: PropTypes.number.isRequired,
+    updateTotalPages: PropTypes.func.isRequired
   }
-
+  
   componentDidMount() {
-    const { currentPage } = this.props;
+    const { currentPage, updateTotalPages } = this.props;
     getCharacters(currentPage)
       .then(response => {
+        console.log('RESPONSE', response);
+        updateTotalPages(response.totalPages);
         this.setState({ characters: response.results });
       });
   }

@@ -8,14 +8,13 @@ import Paging from './paging/Paging';
 export default class App extends PureComponent {
   state = {
     currentPage: 1,
-    totalPages: 25
+    totalPages: null
   }
 
   updatePageForward = () => {
     const { currentPage, totalPages } = this.state;
     if(currentPage > totalPages - 1) return;
     this.setState({ currentPage: currentPage + 1 }, () => {
-      console.log('inside update page method', currentPage);
     });
   }
 
@@ -25,8 +24,8 @@ export default class App extends PureComponent {
     this.setState({ currentPage: currentPage - 1 });
   }
 
-  updateTotalPages() {
-
+  updateTotalPages = (pages) => {
+    this.setState({ totalPages: pages }); 
   }
 
   render() {
@@ -35,7 +34,7 @@ export default class App extends PureComponent {
       <Fragment>
         <Header />
         <Paging totalPages={totalPages} currentPage={currentPage} updatePageForward={this.updatePageForward} updatePageBackward={this.updatePageBackward}/>
-        <Characters currentPage={currentPage}/>
+        <Characters currentPage={currentPage} updateTotalPages={this.updateTotalPages}/>
       </Fragment>
     );
   }
