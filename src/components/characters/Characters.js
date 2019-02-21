@@ -4,6 +4,7 @@ import { getCharacters } from '../../services/rickAndMortyApi';
 import styles from '../css/Characters.css';
 import PropTypes from 'prop-types';
 import { withPaging } from '../Paging';
+import { withFetch } from '../fetch/Fetch';
 
 export class Characters extends PureComponent {
 
@@ -64,4 +65,5 @@ export class Characters extends PureComponent {
   }
 }
 
-export default withPaging(Characters);
+const FetchCharacters = withFetch(Characters)(getCharacters);
+export default withPaging(FetchCharacters);
