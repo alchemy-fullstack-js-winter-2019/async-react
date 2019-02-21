@@ -1,11 +1,16 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Characters from './characters/Characters';
+import Characters from '../components/characters/Characters';
+
+jest.mock('./services/rickAndMortyApi.js');
 
 describe('Characters', () => {
-  it('shows the characters', ()=> {
-    const characters = ['Jon', 'Sansa', 'Ned', 'Arya'];
-    const tree = renderer.create(<Characters characters={characters} />);
+  it('matches a snapshot', () => {
+    const tree = renderer.create(
+      <Characters />
+    ).toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 });
+

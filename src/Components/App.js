@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-import Character from './characters/Character';
 import Characters from './characters/Characters';
+import Header from './Header';
+import styles from './css/App.css';
 
 export default class App extends Component {
   state = {
-    name: '', 
-    status: '',
-    species: '',
-    gender: ''
+    currentPage: 1,
+    totalPages: 4,
   }
+  updateTotalPages() {
+
+  }
+  
   render() {
     return (
       <>
-        <Character gender={this.state.gender} status={this.state.status} species={this.state.species} name={this.state.name} />
-        <Characters />
-        <h1> Hello </h1>
+        <Header currentPage={this.state.currentPage} totalPages={this.state.totalPages}/>
+        <Characters className={styles} />
       </>
     );
   }
