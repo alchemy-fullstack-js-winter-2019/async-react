@@ -6,3 +6,12 @@ export const getCharacters = (page) => {
       results: json.results
     }));
 };
+
+export const getLocations = () => {
+  return fetch('https://rickandmortyapi.com/api/location/')
+    .then(res => res.json())
+    .then(json => ({
+      locationTotalPages: json.info.pages,
+      results: json.results
+    }));
+};
