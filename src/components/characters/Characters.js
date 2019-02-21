@@ -1,27 +1,45 @@
 import React, { PureComponent, Fragment } from 'react';
-// import PropTypes from 'prop-types';
 import Character from './Character';
 import styles from '../../css/Characters.css';
 import { getCharacters } from '../../services/rickAndMortyApi.js';
+import PropTypes from 'prop-types';
 
 class Characters extends PureComponent {
+  static propTypes = {
+    page: PropTypes.number,
+    updateTotalPages: PropTypes.func.isRequired
+  }
+
+  static defaultProps = {
+    page: 1
+  }
+
   state = {
     characters: []
   }
 
-  componentDidMount() {
-    console.log('mounted');
-    getCharacters()
+  fetchCharacters() {
+    getCharacters(this.props.page)
       .then(response => {
-        console.log(response);
+        this.props.updateTotalPages(response.totalPages);
         this.setState({ characters: response.results });
       });
+  }
+  
+  componentDidMount() {
+    this.fetchCharacters();
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.page !== this.props.page) {
+      this.fetchCharacters();
+    }
   }
   
   render() {
     const characters = this.state.characters.map(c => {
       return (
-        <li key={c.name}><Character character={c} /></li>
+        <li key={c.id}><Character character={c} /></li>
       );
     });
     return (

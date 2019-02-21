@@ -5,7 +5,8 @@ function Character({ character }) {
   const { name, status, species, gender } = character;
   return (
     <Fragment>
-      {name}, {status}, {species}, {gender}
+      <p>{name}</p> 
+      <p>{status}</p> <p>{species}</p> <p>{gender}</p>
     </Fragment>
   );
 }

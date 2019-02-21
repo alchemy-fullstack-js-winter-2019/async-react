@@ -2,12 +2,19 @@
 
 exports[`Character matches a snapshot 1`] = `
 Array [
-  "Rick Sanchez",
-  ", ",
-  "Alive",
-  ", ",
-  "Human",
-  ", ",
-  "Male",
+  <p>
+    Rick Sanchez
+  </p>,
+  <p>
+    Alive
+  </p>,
+  " ",
+  <p>
+    Human
+  </p>,
+  " ",
+  <p>
+    Male
+  </p>,
 ]
 `;

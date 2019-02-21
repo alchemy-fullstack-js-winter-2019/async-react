@@ -4,13 +4,15 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background: black;
     color: white;
-    padding: 20px;
     
     li {
-      list-style: none;
       padding: 20px;
+      background: indigo;
+      list-style: none;
+      border: 5px black;
+      width: 200px;
+      margin: 10px;
     }
   }
 }
