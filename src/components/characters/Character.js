@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Character({ character }) {
-  const { name, status, species, gender } = character;
+  const { name, status, species, gender, image } = character;
   
   return (
     <>
@@ -10,6 +10,7 @@ function Character({ character }) {
       <p>{species}</p>
       <p>{gender}</p>
       <p>{status}</p>
+      <img src={image}></img>
     </>
   );
 
