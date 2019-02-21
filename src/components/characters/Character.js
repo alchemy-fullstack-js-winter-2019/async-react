@@ -1,23 +1,22 @@
 import React from 'react';
-import propTypes from 'prop-types';
-
+import PropTypes from 'prop-types';
 
 
 function Character({ character }) {
   const { name, status, species, gender } = character;
+
   return (
-    <ul>
-      <li>{name}</li>
-      <li>{status}</li>
-      <li>{species}</li>
-      <li>{gender}</li>
-    </ul>
-  );;
+    <tr>
+      <td>{name}</td>
+      <td>{status}</td>
+      <td>{species}</td>
+      <td>{gender}</td>
+    </tr>
+  );
 }
 
-
 Character.propTypes = {
-  character: propTypes.object.isRequired
+  character: PropTypes.object.isRequired
 };
 
 export default Character;

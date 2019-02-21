@@ -75,3 +75,5 @@ if you want to style inline use double curly braces.
  Unmount 
 
  memoization speeds up internet request but takes up more local space. 
+
+ ------jest needs __mocks__ in order to test fetch---

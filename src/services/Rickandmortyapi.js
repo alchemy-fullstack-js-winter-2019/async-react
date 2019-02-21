@@ -1,5 +1,5 @@
-export const getCharacters = () => {
-  return fetch('https://cors-anywhere.herokuapp.com/http://rickandmortyapi.com/api/character', {
+export const getCharacters = page => {
+  return fetch(`https://rickandmortyapi.com/api/character?page=${page}`, {
     headers: {
       origin: null
     }
