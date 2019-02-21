@@ -5,6 +5,11 @@ Array [
   <h1>
     Header
   </h1>,
+  <span>
+    1
+     of 
+    1
+  </span>,
   <ul />,
 ]
 `;

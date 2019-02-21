@@ -1,19 +1,41 @@
 import React, { PureComponent } from 'react';
 import Character from './Character';
 import { getCharacters } from '../../services/rickAndMortyApi';
+import PropTypes from 'prop-types';
 import styles from './Characters.css';
 
 export default class Characters extends PureComponent {
+  static propTypes = {
+    page: PropTypes.number,
+    updateTotalPages: PropTypes.func.isRequired
+  }
+
+  static defaultProps = {
+    page: 1
+  }
+
   state = { 
     characters: []
   }
   
-  componentDidMount(){
-    getCharacters()
+  
+  fetchCharacters() {
+    getCharacters(this.props.page)
       .then(response => {
         this.setState({ characters: response.results });
-
+        //response.totalPages or ???
+        this.props.updateTotalPages({ totalPages: response.totalPages });
       });
+  }
+
+  componentDidMount() {
+    this.fetchCharacters();
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.page !== this.props.page) {
+      this.fetchCharacters();
+    }
   }
 
   render() {
@@ -26,3 +48,5 @@ export default class Characters extends PureComponent {
     );
   }
 }
+
+

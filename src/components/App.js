@@ -6,26 +6,22 @@ import Characters from './characters/Characters';
 export default class App extends Component {
   state = {
     currentPage: 1,
-    totalPages: 25
+    totalPages: 1
   }
-
-  // this.setSate((state, props) => {
-  //   Return { title: state.title + ‘ you’ }
-  // })
-  
 
   pageForward = () => {
-    const { currentPage, totalPages } = this.state;
-    if(currentPage < totalPages) {
-      this.setState({ currentPage: currentPage + 1 });
-    }
-  }
-  pageBackward = () => {
-    const { currentPage, totalPages  } = this.state;
-    if(currentPage > 1) {
-      this.setState({ currentPage: currentPage -  1 });
-    }
+    const { currentPage } = this.state;
+    this.setState({ currentPage: currentPage + 1 });
     
+  }
+
+  pageBackward = () => {
+    const { currentPage } = this.state;
+    this.setState({ currentPage: currentPage -  1 });
+  }
+
+  updateTotalPages = totalPages => {
+    this.setState({ totalPages: totalPages });
   }
   
   render() {
@@ -33,11 +29,13 @@ export default class App extends Component {
     return (
       <>
         <Header />
-        <h4>{currentPage}/{totalPages}</h4>
-        
-        <button onClick={this.pageBackward}>BACK</button>
-        <button onClick={this.pageForward} >NEXT</button>
-        <Characters />
+          {currentPage > 1 && <button onClick={this.pageBackward}>BACK</button>}
+          <span>{currentPage} of {totalPages}</span>
+          {currentPage < totalPages && <button onClick={this.pageForward} >NEXT</button>}
+        <Characters 
+          page={currentPage}
+          updateTotalPages={this.updateTotalPages}
+        />
       </>
     );
   }
