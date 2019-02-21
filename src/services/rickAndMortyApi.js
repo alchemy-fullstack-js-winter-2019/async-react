@@ -1,5 +1,5 @@
-export const getCharacters = (page) => {
-  return fetch(`https://rickandmortyapi.com/api/character?page=${page}`, {
+export const getCharacters = page => {
+  return fetch(`https://swapi.co/api/people?page=${page}`, {
     headers: {
       origin: null
     }

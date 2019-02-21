@@ -8,7 +8,7 @@ import { withPaging } from '../paging/Paging';
 export class Characters extends PureComponent {
   static propTypes = {
     page: PropTypes.number,
-    updateTotalPages: PropTypes.func
+    updateTotalPages: PropTypes.func.isRequired
   };
 
   static defaultProps ={
@@ -20,7 +20,6 @@ export class Characters extends PureComponent {
   };
 
   fetchCharacters = () => {
-    console.log('props', this.props.updateTotalPages);
     getCharacters(this.props.page)
       .then(response => {
         this.props.updateTotalPages(response.totalPages);

@@ -2,25 +2,27 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export const withPaging = ComponentToPage => {
-  class withPaging extends Component {
+  class WithPaging extends Component {
     state = {
       currentPage: 1,
       totalPages: 1
     };
-  incrementCurrentPage = () => {
-    this.setState(state => ({ currentPage: state.currentPage + 1 }));
-  };
 
-  decrementCurrentPage = () => {
-    this.setState(state => ({ currentPage: state.currentPage - 1 }));
-  };
+    incrementCurrentPage = () => {
+      this.setState(state => ({ currentPage: state.currentPage + 1 }));
+    };
 
-  updateTotalPages = whatTotalPagesShouldBe => {
-    this.setState({ totalPages: whatTotalPagesShouldBe });
-  };
-  render() {
-    const { currentPage, totalPages } = this.state;
-    return (
+    decrementCurrentPage = () => {
+      this.setState(state => ({ currentPage: state.currentPage - 1 }));
+    };
+
+    updateTotalPages = whatTotalPagesShouldBe => {
+      this.setState({ totalPages: whatTotalPagesShouldBe });
+    };
+
+    render() {
+      const { currentPage, totalPages } = this.state;
+      return (
         <>
           <Paging
             currentPage={currentPage}
@@ -34,16 +36,17 @@ export const withPaging = ComponentToPage => {
             {...this.props}
           />
         </>
-    );
-  } 
+      );
+    }
   }
-  return withPaging;
+
+  return WithPaging;
 };
 
 function Paging({ currentPage, totalPages, increment, decrement }) {
   return (
     <>
-     {currentPage > 1 && <button onClick={decrement}>Back</button>}
+      {currentPage > 1 && <button onClick={decrement}>Back</button>}
       <span>{currentPage} / {totalPages}</span>
       {currentPage < totalPages && <button onClick={increment}>Forward</button>}
     </>
