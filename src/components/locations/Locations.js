@@ -5,15 +5,18 @@ import Location from './Location';
 
 export default class Locations extends PureComponent {
     state = {
-      locations: []
+      locations: [],
+      currentPage: 1,
+      totalPages: null
     }
     static propTypes = {
-      currentPage: PropTypes.number.isRequired,
+      increaseCount: PropTypes.func.isRequired,
+      decreaseCount: PropTypes.func.isRequired,
       updateTotalPages: PropTypes.func.isRequired
     }
 
     componentDidMount() {
-      getLocations(this.props.currentPage)
+      getLocations(this.state.currentPage)
         .then(res => {
           this.setState({ locations: res.results }, () => {
             this.props.updateTotalPages(res.totalPages);
@@ -21,7 +24,7 @@ export default class Locations extends PureComponent {
         });
     }
     componentDidUpdate() {
-      getLocations(this.props.currentPage)
+      getLocations(this.state.currentPage)
         .then(res => {
           this.setState({ locations: res.results }, () => {
             this.props.updateTotalPages(res.totalPages);

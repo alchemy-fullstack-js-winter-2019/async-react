@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Characters from './characters/Characters';
+import Locations from './locations/Locations';
+
 
 export default class App extends Component {
   state = {
@@ -24,6 +26,11 @@ export default class App extends Component {
       <>
         <h1>My list of things</h1>
         <Characters
+          updateTotalPages={this.updateTotalPages}
+          increaseCount={this.increaseCount}
+          decreaseCount={this.decreaseCount}
+        />
+        <Locations 
           updateTotalPages={this.updateTotalPages}
           increaseCount={this.increaseCount}
           decreaseCount={this.decreaseCount}
