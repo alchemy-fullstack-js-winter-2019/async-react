@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Paging from './paging/Paging';
 import Characters from './characters/Characters';
 import './App.css';
 
@@ -31,14 +32,13 @@ export default class App extends Component {
     return (
       <>
         <h1>Rick and Mort, Yo!</h1>
-        <header>
-          <p>Current Page: {currentPage}</p>
-          <p>Total Pages: {totalPages}</p>
-        </header>
-        <button onClick={this.decrement}>{'<'}</button>
-        <button onClick={this.increment}>{'>'}</button>
-
-        <Characters 
+        <Paging
+          currentPage={currentPage}
+          totalPages={totalPages}
+          decrement={this.decrement}
+          increment={this.increment}
+        />
+        <Characters
           currentPage={currentPage}
           updateTotalPages={this.updateTotalPages}
         />
