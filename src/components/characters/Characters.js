@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Character from './Character';
 import { getCharacters } from '../services/rickAndMortyApi';
 import PropTypes from 'prop-types';
+import styles from './Characters.css';
 
 
 export default class App extends Component {
@@ -42,7 +43,7 @@ export default class App extends Component {
         });
         return (
             <Fragment>
-                <ul>
+                <ul className={styles.Characters}>
                     {characterList}
                 </ul>
             </Fragment>
