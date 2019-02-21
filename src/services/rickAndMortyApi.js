@@ -10,3 +10,5 @@ export const getCharacters = () => {
       results: json.results
     }));
 };
+
+// We had to specify the headers because we're using the cors-anywhere in the http request
