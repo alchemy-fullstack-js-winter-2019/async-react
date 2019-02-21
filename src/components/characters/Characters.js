@@ -22,10 +22,12 @@ export default class Characters extends PureComponent {
       });
   }
 
-  componentDidUpdate() {
-    console.log('page', this.props.currentPage);
-    // getCharacters(this.props.currentPage)
-    //   .then(res => this.setState({ characters: res.results }));
+  componentDidUpdate(prevProps) {
+    const { currentPage } = this.props;
+    if(prevProps.currentPage !== currentPage) {
+      getCharacters(this.props.currentPage)
+        .then(res => this.setState({ characters: res.results }));
+    }
   }
 
   render() {
