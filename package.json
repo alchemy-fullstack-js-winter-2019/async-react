@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --verbose",
     "test:watch": "npm run test -- --watch",
-    "start": "webpack-dashboard -- webpack-dev-server --hot --mode development --devtool eval-source-map",
+    "start": "webpack-dev-server --hot --mode development --devtool eval-source-map",
     "build": "webpack -p"
   },
   "jest": {
@@ -60,6 +60,7 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
+    "webpack-dashboard": "^3.0.0",
     "webpack-dev-server": "^3.1.14"
   },
   "bugs": {
