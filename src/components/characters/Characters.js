@@ -23,7 +23,6 @@ class Characters extends PureComponent {
     getCharacters(this.props.page)
       .then(response => {
         this.setState({ characters: response.results });
-        //response.totalPages or ???
         this.props.updateTotalPages(response.totalPages);
       });
   }

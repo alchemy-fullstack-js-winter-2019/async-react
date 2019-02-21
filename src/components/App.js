@@ -4,9 +4,6 @@ import Characters from './characters/Characters';
 import Locations from './locations/Locations';
 
 export default class App extends Component {
-  state = {
-    location: 'Earth'
-  }
   render() {
     return (
       <>
@@ -15,11 +12,9 @@ export default class App extends Component {
           <Characters />
         </div>
         <div>
-          <Locations location={location}/>
+          <Locations />
         </div>
       </>
     );
   }
 }
-
-

@@ -34,7 +34,7 @@ export const withPaging = ComponentToPage => {
             page={currentPage}
             updateTotalPages={this.updateTotalPages}
             {... this.props} 
-          />;
+          />
         </>
       );
     }
