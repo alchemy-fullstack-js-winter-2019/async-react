@@ -1,7 +1,3 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import Character from './Character';
-
 const results = [
   {
     'id': 1,
@@ -54,8 +50,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/1',
     'created': '2017-11-04T18:48:46.250Z'
-    },
-    {
+  },
+  {
     'id': 2,
     'name': 'Morty Smith',
     'status': 'Alive',
@@ -106,8 +102,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/2',
     'created': '2017-11-04T18:50:21.651Z'
-    },
-    {
+  },
+  {
     'id': 3,
     'name': 'Summer Smith',
     'status': 'Alive',
@@ -151,8 +147,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/3',
     'created': '2017-11-04T19:09:56.428Z'
-    },
-    {
+  },
+  {
     'id': 4,
     'name': 'Beth Smith',
     'status': 'Alive',
@@ -196,8 +192,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/4',
     'created': '2017-11-04T19:22:43.665Z'
-    },
-    {
+  },
+  {
     'id': 5,
     'name': 'Jerry Smith',
     'status': 'Alive',
@@ -238,8 +234,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/5',
     'created': '2017-11-04T19:26:56.301Z'
-    },
-    {
+  },
+  {
     'id': 6,
     'name': 'Abadango Cluster Princess',
     'status': 'Alive',
@@ -260,8 +256,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/6',
     'created': '2017-11-04T19:50:28.250Z'
-    },
-    {
+  },
+  {
     'id': 7,
     'name': 'Abradolf Lincler',
     'status': 'unknown',
@@ -283,8 +279,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/7',
     'created': '2017-11-04T19:59:20.523Z'
-    },
-    {
+  },
+  {
     'id': 8,
     'name': 'Adjudicator Rick',
     'status': 'Dead',
@@ -305,8 +301,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/8',
     'created': '2017-11-04T20:03:34.737Z'
-    },
-    {
+  },
+  {
     'id': 9,
     'name': 'Agency Director',
     'status': 'Dead',
@@ -327,8 +323,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/9',
     'created': '2017-11-04T20:06:54.976Z'
-    },
-    {
+  },
+  {
     'id': 10,
     'name': 'Alan Rails',
     'status': 'Dead',
@@ -349,8 +345,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/10',
     'created': '2017-11-04T20:19:09.017Z'
-    },
-    {
+  },
+  {
     'id': 11,
     'name': 'Albert Einstein',
     'status': 'Dead',
@@ -371,8 +367,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/11',
     'created': '2017-11-04T20:20:20.965Z'
-    },
-    {
+  },
+  {
     'id': 12,
     'name': 'Alexander',
     'status': 'Dead',
@@ -393,8 +389,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/12',
     'created': '2017-11-04T20:32:33.144Z'
-    },
-    {
+  },
+  {
     'id': 13,
     'name': 'Alien Googah',
     'status': 'unknown',
@@ -415,8 +411,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/13',
     'created': '2017-11-04T20:33:30.779Z'
-    },
-    {
+  },
+  {
     'id': 14,
     'name': 'Alien Morty',
     'status': 'unknown',
@@ -437,8 +433,8 @@ const results = [
     ],
     'url': 'https://rickandmortyapi.com/api/character/14',
     'created': '2017-11-04T20:51:31.373Z'
-    },
-    {
+  },
+  {
     'id': 15,
     'name': 'Alien Rick',
     'status': 'unknown',
@@ -462,23 +458,9 @@ const results = [
   }
 ];
 
-export default class Characters extends PureComponent {
-  state = {
-    characters: []
-  };
-
-  componentDidMount() {
-    this.setState({ characters: results });
-  }
-
-  render() {
-    const characters = this.state.characters.map(character => {
-      return (
-        <Character key={character.name} character={character} />
-      );
-    });
-    return (
-      
-    );
-  }
-}
+export const getCharacters = () => {
+  return Promise.resolve({
+    totalPages: 15,
+    results
+  });
+};

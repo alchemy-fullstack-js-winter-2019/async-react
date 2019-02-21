@@ -8,9 +8,10 @@ function Character({ character }) {
 
   );
 
-  Character.propTypes = {
-    character: PropTypes.object.isRequired
-  };
 }
+
+Character.propTypes = {
+  character: PropTypes.object.isRequired
+};
 
 export default Character;
