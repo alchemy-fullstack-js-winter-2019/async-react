@@ -3,15 +3,17 @@ import Characters from './characters/Characters';
 
 export default class App extends Component {
   state = {
-    currentPage: 0,
-    totalPages: 0
+    currentPage: 1,
+    totalPages: 1
   }
   increaseCount = () => {
-    const { currentPage } = this.state;
+    const { currentPage, totalPages } = this.state;
+    if(currentPage === totalPages) return;
     this.setState({ currentPage: currentPage + 1 });
   }
   decreaseCount = () => {
     const { currentPage } = this.state;
+    if(currentPage === 1) return;
     this.setState({ currentPage: currentPage - 1 });
   }
   render() {
