@@ -29,9 +29,11 @@ class App extends Component {
     return (
       <>
         <h1 className={styles.header}>Rick and Morty API</h1>
-        <p>{currentPage} of {totalPages}</p>
-        <button onClick={this.updatePageBackward}>BACK</button>
-        <button onClick={this.updatePageForward}>NEXT</button>
+        <div className={styles.controls}>
+          <p>{currentPage} of {totalPages}</p>
+          <button onClick={this.updatePageBackward}>BACK</button>
+          <button onClick={this.updatePageForward}>NEXT</button>
+        </div>
         <Characters />
       </>
     );
