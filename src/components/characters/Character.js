@@ -7,9 +7,9 @@ function Character({ character }) {
   return (
     <div>
       <label>{name}</label>
+      <label>{status}</label>
       <label>{gender}</label>
       <label>{species}</label>
-      <label>{status}</label>
     </div>
   );
 }

@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
-import Characters from '../components/characters/Characters';
-
-export default class App extends Component {
-  render() {
-    return(
-      <Characters />
-    );
-  }
-}
-
 export const getCharacters = () => {
-  return Promise.resolve({
-    totalPages: 5;
-    results
-  });
+  return fetch('https://swapi.co/api/people', {
+    headers: {
+      origin: null
+    }
+  })
+    .then(res => res.json())
+    .then(json => ({
+      totalPages: Math.ceil(json.count / 10),
+      results: json.results
+    }));
 };
