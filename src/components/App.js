@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Characters from './characters/Characters';
+import styles from './App.css';
 
 class App extends Component {
 
@@ -27,6 +28,7 @@ class App extends Component {
 
     return (
       <>
+        <h1 className={styles.header}>Rick and Morty API</h1>
         <p>{currentPage} of {totalPages}</p>
         <button onClick={this.updatePageBackward}>BACK</button>
         <button onClick={this.updatePageForward}>NEXT</button>

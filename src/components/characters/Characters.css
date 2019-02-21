@@ -1,0 +1,9 @@
+.list {
+  display: grid;
+  grid-template-columns: 321px 321px 321px;
+  grid-template-rows: 321px 321px 321px 321px 321px 321px;
+  grid-gap: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 200px;
+}

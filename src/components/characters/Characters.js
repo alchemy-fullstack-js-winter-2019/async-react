@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import Character from './Character';
 import { getCharacters } from '../../services/rickAndMortyApi';
+import styles from './Characters.css';
 
 
 class Characters extends PureComponent {
@@ -21,7 +22,7 @@ class Characters extends PureComponent {
       );
     });
     return (
-      <ul>
+      <ul className={styles.list}>
         {characters}
       </ul>
     );
