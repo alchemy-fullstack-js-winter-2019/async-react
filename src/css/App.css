@@ -40,6 +40,19 @@ li {
   line-height: 0.7em;
 }
 
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
 * {
   font-family: 'montserrat';
 }

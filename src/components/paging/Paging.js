@@ -1,15 +1,16 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../css/App.css';
 import 'normalize-css';
-import '../../css/App.css';
 
 function Paging({ currentPage, totalPages, updatePageForward, updatePageBackward }) {
-  console.log('PAGING', currentPage);
   return (
     <Fragment>
-      <button onClick={updatePageBackward}>Back</button>
-      <p>{currentPage} / {totalPages}</p>
-      <button onClick={updatePageForward}>Forward</button>
+      <div className={styles.buttons}>
+        <button onClick={updatePageBackward}>Back</button>
+        <p>{currentPage} / {totalPages}</p>
+        <button onClick={updatePageForward}>Forward</button>
+      </div>
     </Fragment>
   );
 }
