@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
-import Character from './Character';
-import { getCharacters } from '../../services/rickAndMortyApi';
-import styles from '../css/Characters.css';
+import Location from './Location';
+import { getLocations } from '../../services/rickAndMortyApi';
 import PropTypes from 'prop-types';
 import { withPaging } from '../Paging';
 
-export class Characters extends PureComponent {
+export class Locations extends PureComponent {
 
   static propTypes = {
     page: PropTypes.number,
@@ -14,54 +13,51 @@ export class Characters extends PureComponent {
 
   static defaultProps = {
     page: 1,
-
   }
 
   state = {
-    characters: []
+    locations: []
   };
 
   // Call the updateTotalPages function (that was passed as a prop) to notify App what total pages should be inside this fetch function
-  fetchCharacters = () => {
-    getCharacters(this.props.page)
+  fetchLocations = () => {
+    getLocations(this.props.page)
       .then(res => {
         this.props.updateTotalPages(res.totalPages);
-        this.setState({ characters: res.results });
+        this.setState({ locations: res.results });
       });
   }
 
   // initial Api call for characters to load page
   componentDidMount() {
-    this.fetchCharacters();
+    this.fetchLocations();
   }
 
   // only update (call Api again) if the prevProps aren't available
   componentDidUpdate(prevProps) {
     if(prevProps !== this.props.page) {
-      this.fetchCharacters();
+      this.fetchLocations();
     }
   }
 
   render() {
-    const listOfChars = this.state.characters.map(char => {
+    const listOfLocs = this.state.locations.map(locs => {
       return (
-        <Character 
-          key={char.id}
-          name={char.name}
-          image={char.image}
-          status={char.status}
-          species={char.species}
-          gender={char.gender}
+        <Location 
+          key={locs.id}
+          name={locs.name}
+          type={locs.type}
+          dimension={locs.dimension}
         />
       );
     });
 
     return (
-      <div className={styles.page}>
-        {listOfChars}
+      <div>
+        {listOfLocs}
       </div>
     );
   }
 }
 
-export default withPaging(Characters);
+export default withPaging(Locations);

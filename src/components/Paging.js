@@ -60,3 +60,5 @@ Paging.propTypes = {
   incrementPage: PropTypes.func.isRequired,
   decrementPage: PropTypes.func.isRequired
 };
+
+export default Paging;
