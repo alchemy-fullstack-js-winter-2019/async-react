@@ -21,6 +21,10 @@ export default class App extends Component {
     this.setState({ currentPage: page });
   }
 
+  updateTotalPages = totalPages => {
+    this.setState({ totalPages });
+  }
+
   render() {
     const { currentPage, totalPages } = this.state;
     return (
@@ -31,7 +35,10 @@ export default class App extends Component {
         <button onClick={this.decrement}>{'<'}</button>
         <button onClick={this.increment}>{'>'}</button>
 
-        <Characters page={currentPage} />
+        <Characters 
+          currentPage={currentPage}
+          updateTotalPages={this.updateTotalPages}
+        />
       </>
     );
   }
