@@ -9,24 +9,35 @@ export default class App extends Component {
     //     super(props);
     // }
     static propTypes = {
-        currentPage: PropTypes.number.isRequired
+        currentPage: PropTypes.number.isRequired,
+        updateTotalPages: PropTypes.func.isRequired
     };
     state = {
         characters: []
     };
 
     componentDidUpdate() {
-        console.log('COMPONENTDID MOUNT', this.props.currentPage);
         getCharacters(this.props.currentPage)
             .then(chars => {
-                this.setState({ characters: chars.results });
+                this.setState({ characters: chars.results }, () => {
+                    this.props.updateTotalPages(chars.totalPages);
+                });
+            });
+
+    }
+    componentDidMount() {
+        getCharacters(this.props.currentPage)
+            .then(chars => {
+                this.setState({ characters: chars.results }, () => {
+                    this.props.updateTotalPages(chars.totalPages);
+                });
             });
     }
 
     render() {
         const characterList = this.state.characters.map(char => {
             return (
-                <Character character={char} key={char.name}/>
+                <Character character={char} key={char.id}/>
             );
         });
         return (
