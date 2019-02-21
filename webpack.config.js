@@ -3,7 +3,7 @@ const CleanPlugin = require('clean-webpack-plugin');
 
 //eslint-disable-next-line
 module.exports = {
-  entry: ['@babel/polyfill','./src/index.js'],
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     filename: './bundle.[hash].js'
   },
@@ -63,4 +63,4 @@ module.exports = {
       }
     ]
   }
-}; //entry point to our application
+}; 
