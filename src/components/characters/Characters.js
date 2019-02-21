@@ -1,22 +1,6 @@
 import React, { PureComponent } from 'react';
 import Character from './Character';
-
-const results = [
-  {
-    name: 'bob',
-    img: 'https://www.littledayout.com/wp-content/uploads/articles/2017/07-July/20170715-WorldEmojiDay/DabEmoji.jpg',
-    status: 'alive',
-    species: 'human',
-    gender: 'mail'
-  },
-  {
-    name: 'bob2',
-    img: 'https://www.littledayout.com/wp-content/uploads/articles/2017/07-July/20170715-WorldEmojiDay/DabEmoji.jpg',
-    status: 'dead',
-    species: 'animal',
-    gender: 'mail' 
-  }
-];
+import { getCharacters } from '../../services/rickAndMortyApi';
 
 export default class Characters extends PureComponent {
   state = {
@@ -24,7 +8,8 @@ export default class Characters extends PureComponent {
   }
 
   componentDidMount() {
-    this.setState({ characters: results });
+    getCharacters()
+      .then(res => this.setState({ characters: res.results }));
   }
 
   render() {
