@@ -1,6 +1,6 @@
 import React from 'React';
 import renderer from 'react-test-renderer';
-import Character from './characters/Character';
+import Character from './Character';
 
 describe('Character', () => {
   it('matches a snapshot', () => {

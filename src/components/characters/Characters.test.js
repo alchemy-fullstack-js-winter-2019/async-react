@@ -1,6 +1,8 @@
 import React from 'React';
 import renderer from 'react-test-renderer';
-import Characters from './characters/Characters';
+import Characters from './Characters';
+
+jest.mock('../../services/rickAndMortyApi.js');
 
 describe('Characters', () => {
   it('matches a snapshot', () => {

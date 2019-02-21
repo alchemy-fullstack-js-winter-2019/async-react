@@ -9,9 +9,7 @@ function Character({ character }) {
       <h2>{name}</h2>
       <img src={image}/>
       <div className={styles.info}>
-        <p>{status}</p>
-        <p>{species}</p>
-        <p>{gender}</p>
+        <p>{gender} | {species} | {status}</p>
       </div>
     </Fragment>
   );
