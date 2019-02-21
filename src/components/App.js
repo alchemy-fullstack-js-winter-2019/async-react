@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Characters from './characters/Characters';
-import Paging from './paging/Paging';
 
 export default class App extends Component {
   state = {
@@ -21,19 +20,13 @@ export default class App extends Component {
     this.setState({ totalPages: pages });
   }
   render() {
-    const { currentPage, totalPages } = this.state;
     return (
       <>
         <h1>My list of things</h1>
-        <Paging 
-          currentPage={currentPage}
-          totalPages={totalPages}
+        <Characters
+          updateTotalPages={this.updateTotalPages}
           increaseCount={this.increaseCount}
           decreaseCount={this.decreaseCount}
-        />
-        <Characters
-          currentPage={currentPage}
-          updateTotalPages={this.updateTotalPages}
         />
       </>
     );

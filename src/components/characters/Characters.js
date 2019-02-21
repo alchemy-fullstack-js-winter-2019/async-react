@@ -2,23 +2,27 @@ import React, { PureComponent } from 'react';
 import Character from './Character';
 import  { getCharacters } from '../../services/rickAndMortyApi';
 import PropTypes from 'prop-types';
+import Paging from '../paging/Paging';
 
 export default class Characters extends PureComponent {
   state = {
-    characters: []
+    characters: [],
+    currentPage: 1,
+    totalPages: null
   } 
   static propTypes = {
-    currentPage: PropTypes.number.isRequired,
-    updateTotalPages: PropTypes.func.isRequired
+    updateTotalPages: PropTypes.func.isRequired,
+    increaseCount: PropTypes.func.isRequired,
+    decreaseCount: PropTypes.func.isRequired
   }
   componentDidMount() {
-    getCharacters(this.props.currentPage)
+    getCharacters(this.state.currentPage)
       .then(res => this.setState({ characters: res.results }, () => {
         this.props.updateTotalPages(res.totalPages);
       }));
   }
   componentDidUpdate() {
-    getCharacters(this.props.currentPage)
+    getCharacters(this.state.currentPage)
       .then(res => this.setState({ characters: res.results }, () => {
         this.props.updateTotalPages(res.totalPages);
       }));
@@ -27,10 +31,19 @@ export default class Characters extends PureComponent {
     const characters = this.state.characters.map(character => {
       return <Character key={character.id} character={character}/>;
     });
+    const { currentPage, totalPages } = this.state;
     return (
-      <ul>
-        {characters} 
-      </ul>
+      <>
+        <Paging 
+          currentPage={currentPage}
+          totalPages={totalPages}
+          increaseCount={this.increaseCount}
+          decreaseCount={this.decreaseCount}
+        />
+        <ul>
+          {characters} 
+        </ul>
+      </>
     );
   }
 }
