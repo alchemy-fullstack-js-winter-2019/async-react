@@ -1,21 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Character from './Character';
-
-const results = [
-  {
-    name: 'Jon', 
-    status: 'Alive',
-    house: 'N/A',
-    gender: 'male'
-  },
-  {
-    name: 'Sansa', 
-    status: 'Alive',
-    house: 'Stark',
-    gender: 'female'
-  }
-];
+import { getCharacters } from '../services/rickAndMortyApi.js';
 
 
 export default class Characters extends PureComponent {
@@ -28,16 +14,20 @@ export default class Characters extends PureComponent {
   };
 
   componentDidMount() {
-    this.setState({ characters: results });
+    getCharacters()
+      .then(response => {
+        this.setState({ characters: response.results });
+      });
   }
+
   render() {
     const characters = this.state.characters.map(character => {
       return <Character 
         key={character.name}  
-        gender={character.gender} 
-        name={character.name} 
-        house={character.house} 
-        status={character.status}/>;
+        gender={character.gender}
+        name={character.name}
+        status={character.status} 
+        species={character.species} />;
     });
     return (
         <>

@@ -6,13 +6,13 @@ export default class App extends Component {
   state = {
     name: '', 
     status: '',
-    house: '',
-    gender: '',
+    species: '',
+    gender: ''
   }
   render() {
     return (
       <>
-        <Character gender={this.state.gender} status={this.state.status} house={this.state.house} name={this.state.name} />
+        <Character gender={this.state.gender} status={this.state.status} species={this.state.species} name={this.state.name} />
         <Characters />
         <h1> Hello </h1>
       </>
