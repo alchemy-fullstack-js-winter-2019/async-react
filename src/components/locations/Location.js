@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Location({ name }) {
-
+function Location({ location }) {
+  const { name, dimensions, type } = location;
   return (
-    <h3>{name}</h3>
+    <h3>{name}, {dimensions}, {type}</h3>
   );
 }
 

@@ -3,6 +3,7 @@ import Location from './Location';
 import { getLocations } from '../../services/rickAndMortyApi';
 import PropTypes from 'prop-types';
 import { withPaging } from '../Paging';
+import { withFetch } from '../fetch/Fetch';
 
 export class Locations extends PureComponent {
 
@@ -60,4 +61,5 @@ export class Locations extends PureComponent {
   }
 }
 
-export default withPaging(Locations);
+const FetchLocations = withFetch(Locations)(getLocations);
+export default withPaging(FetchLocations);
