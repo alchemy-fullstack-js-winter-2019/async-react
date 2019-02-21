@@ -40,9 +40,12 @@ class Characters extends React.PureComponent {
     });
 
     return (
-      <ul>
-        {listOfCharacters}
-      </ul>
+      <div>
+        <h3>Characters</h3>
+        <ul>
+          {listOfCharacters}
+        </ul>
+      </div>
     );
   }
 }

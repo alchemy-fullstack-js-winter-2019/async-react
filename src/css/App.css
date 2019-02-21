@@ -12,6 +12,16 @@ h1 {
   color: white;
 }
 
+h3 {
+  text-align: center;
+  font-size: 3em;
+  margin: 0;
+  text-shadow: 2px 2px blue;
+  padding: 10px;
+  background: black;
+  color: white;
+}
+
 .characters {
   padding: 0 10px;
   margin: 0;

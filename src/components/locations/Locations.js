@@ -40,9 +40,12 @@ class Locations extends React.PureComponent {
     });
 
     return (
-      <ul>
-        {listOfLocations}
-      </ul>
+      <div>
+        <h3>Locations</h3>
+        <ul>
+          {listOfLocations}
+        </ul>
+      </div>
     );
   }
 }
