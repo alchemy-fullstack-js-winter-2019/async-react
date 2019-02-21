@@ -1,15 +1,23 @@
 import React, { Component, Fragment } from 'react';
 import Character from './Character';
 import { getCharacters } from '../services/rickAndMortyApi';
+import PropTypes from 'prop-types';
 
 
 export default class App extends Component {
+    // constructor(props) {
+    //     super(props);
+    // }
+    static propTypes = {
+        currentPage: PropTypes.number.isRequired
+    };
     state = {
         characters: []
     };
 
-    componentDidMount() {
-        getCharacters()
+    componentDidUpdate() {
+        console.log('COMPONENTDID MOUNT', this.props.currentPage);
+        getCharacters(this.props.currentPage)
             .then(chars => {
                 this.setState({ characters: chars.results });
             });

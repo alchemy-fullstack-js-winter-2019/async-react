@@ -7,6 +7,23 @@ Array [
   >
     HEADER Component
   </h1>,
+  <p>
+    CURRENT PAGE 
+    1
+  </p>,
+  <p>
+    TotalPages 
+  </p>,
+  <button
+    onClick={[Function]}
+  >
+    NEXT PAGE
+  </button>,
+  <button
+    onClick={[Function]}
+  >
+    PREVIOUS PAGE
+  </button>,
   <ul />,
 ]
 `;
