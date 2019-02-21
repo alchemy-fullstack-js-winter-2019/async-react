@@ -1,14 +1,28 @@
 import React, {} from 'react';
 import Character from './Character';
 import { getCharacters } from '../../services/rickAndMortyApi';
+import PropTypes from 'prop-types';
 
-export default class Characters extends React.PureComponent {
+export default class Characters extends React.Component {
   state = {
     characters: []
   }
 
+  static propTypes = {
+    currentPage: PropTypes.number.isRequired
+  }
+
   componentDidMount() {
-    getCharacters()
+    const { currentPage } = this.props;
+    getCharacters(currentPage)
+      .then(response => {
+        this.setState({ characters: response.results });
+      });
+  }
+
+  componentDidUpdate() {
+    const { currentPage } = this.props;
+    getCharacters(currentPage)
       .then(response => {
         this.setState({ characters: response.results });
       });
@@ -16,7 +30,7 @@ export default class Characters extends React.PureComponent {
 
   render() {
     const listOfCharacters = this.state.characters.map(character => {
-      return <li key={character.name}><Character character={character}/></li>;
+      return <li key={character.id}><Character character={character}/></li>;
     });
 
     return (
