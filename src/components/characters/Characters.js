@@ -9,20 +9,18 @@ export default class Characters extends PureComponent {
   } 
   static propTypes = {
     currentPage: PropTypes.number.isRequired,
-    updateTotalPages: PropTypes.func.isRequired
   }
   componentDidMount() {
     getCharacters(this.props.currentPage)
-      .then(res => {
-        this.setState({ characters: res.results })
-          .then(res => {
-            this.updateTotalPages(res.totalPages);
-          });
-      });
+      .then(res => this.setState({ characters: res.results }));
+  }
+  componentDidUpdate() {
+    getCharacters(this.props.currentPage)
+      .then(res => this.setState({ characters: res.results }));
   }
   render() {
     const characters = this.state.characters.map(character => {
-      return <Character key={character.name} character={character}/>;
+      return <Character key={character.id} character={character}/>;
     });
     return (
       <ul>
