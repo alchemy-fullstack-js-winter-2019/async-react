@@ -6,25 +6,38 @@ import styles from '../css/Characters.css';
 
 
 export default class Characters extends PureComponent {
-  state = {
-    characters: []
-  }
-
   static propTypes = {
-    characters: PropTypes.array,
-    currentPage: PropTypes.array
+    page: PropTypes.number,
+    updateTotalPages: PropTypes.func.isRequired
   };
 
-  componentDidMount() {
-    getCharacters()
+  static defaultProps ={
+    page: 1
+  };
+
+  state = {
+    characters: []
+  };
+
+  fetchCharacters = () => {
+    getCharacters(this.props.page)
       .then(response => {
+        this.props.updateTotalPages(response.totalPages);
         this.setState({ characters: response.results });
       });
   }
+  componentDidMount() {
+    this.fetchCharacters();
+  }
 
+  componentDidUpdate(prevProps) {
+    if(prevProps.page !== this.props.page) {
+      this.fetchCharacters();
+    }
+  }
   render() {
     const characters = this.state.characters.map(character => {
-      return <li key={character.name}> <Character 
+      return <li key={character.id}> <Character 
         gender={character.gender}
         name={character.name}
         status={character.status} 

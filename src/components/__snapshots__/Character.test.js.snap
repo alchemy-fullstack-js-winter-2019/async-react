@@ -2,22 +2,22 @@
 
 exports[`Character shows the character 1`] = `
 Array [
-  <h1>
-     
-     
-  </h1>,
   <h2>
      
      
   </h2>,
-  <h2>
+  <h3>
      
      
-  </h2>,
-  <h2>
+  </h3>,
+  <h3>
      
      
-  </h2>,
+  </h3>,
+  <h3>
+     
+     
+  </h3>,
   <img />,
 ]
 `;

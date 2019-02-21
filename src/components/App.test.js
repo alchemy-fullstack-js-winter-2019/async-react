@@ -6,8 +6,11 @@ import App from './App';
 jest.mock('./services/rickAndMortyApi.js');
 
 describe('App', () => {
-  it('', () => {
-    const tree = renderer.create(<App />).toJSON();
+  it('matches a snapshot', () => {
+    const tree = renderer.create(
+      <App />
+    ).toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 });
