@@ -3,6 +3,7 @@ import 'normalize-css';
 import '../css/App.css';
 import Header from './header/Header';
 import Characters from './characters/Characters';
+import Locations from './locations/Locations';
 import Paging from './paging/Paging';
 
 export default class App extends PureComponent {
@@ -33,8 +34,14 @@ export default class App extends PureComponent {
     return (
       <Fragment>
         <Header />
-        <Paging totalPages={totalPages} currentPage={currentPage} updatePageForward={this.updatePageForward} updatePageBackward={this.updatePageBackward}/>
-        <Characters currentPage={currentPage} updateTotalPages={this.updateTotalPages}/>
+        <div>
+          <Paging totalPages={totalPages} currentPage={currentPage} updatePageForward={this.updatePageForward} updatePageBackward={this.updatePageBackward}/>
+          <Characters currentPage={currentPage} updateTotalPages={this.updateTotalPages}/>
+        </div>
+        <div>
+          <Paging totalPages={totalPages} currentPage={currentPage} updatePageForward={this.updatePageForward} updatePageBackward={this.updatePageBackward}/>
+          <Locations currentPage={currentPage} updateTotalPages={this.updateTotalPages}/>
+        </div>
       </Fragment>
     );
   }
