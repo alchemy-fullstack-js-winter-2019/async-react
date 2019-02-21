@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Character from '../characters/Character';
 import { getCharacters } from '../../services/rickAndMortyApi';
-
+import { withPaging } from '../paging/Paging';
 
 export default class Characters extends PureComponent {
   static propTypes = {
@@ -55,4 +55,4 @@ export default class Characters extends PureComponent {
   }
 }
 
-// exports default withPaging(Characters);
+export const CharacterWithPaging = withPaging(Characters);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Characters from '../components/characters/Characters';
+import { withPaging } from './paging/Paging';
 
 export default class App extends Component {
   constructor(props) {
@@ -7,40 +8,32 @@ export default class App extends Component {
 
   }
   state = {
-    counter: 1,
     currentPages: '',
     totalPages: ''
   }
 
-  handleClickIncrement = () => {
-    // const { counter } = this.state;
-    this.setState(state => ({ currentPages: state.currentPages + 1 }));
-    console.log('click');
+  // handleClickIncrement = () => {
+  //   // const { counter } = this.state;
+  //   this.setState(state => ({ currentPages: state.currentPages + 1 }));
   
-  };
+  // };
 
-  handleClickDecrement = () => {
-    // const { counter } = this.state;
-    this.setState(state => ({ currentPages: state.currentPages - 1 }));
-    console.log('decrement');
+  // handleClickDecrement = () => {
+  //   this.setState(state => ({ currentPages: state.currentPages - 1 }));
+  //   console.log('decrement');
   
-  };
+  // };
 
-  updateTotalPages = totalPages => { //to be able to pass total pages to other components
-    this.setState({ totalPages });
-  }
+  // updateTotalPages = totalPages => { //to be able to pass total pages to other components
+  //   this.setState({ totalPages });
+  // };
 
 
   render() {
     const { currentPage, totalPages } = this.state;
     return (
       <>
-      <Paging
-        currentPage={currentPage}
-        totalPages={totalPages}
-        handleClickIncrement={this.handleClickIncrement}
-        handleClickDecrement={this.handleClickDecrement}
-      />,
+      <Paging />
       <Characters 
         page={currentPage}
         updateTotalPages={this.updateTotalPages}
