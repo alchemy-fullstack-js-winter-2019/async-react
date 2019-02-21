@@ -3,8 +3,8 @@ import Characters from './characters/Characters';
 
 export default class App extends Component {
   state = {
-    currentPage: 1,
-    totalPages: 1
+    currentPage: 2,
+    totalPages: 3
   }
   increaseCount = () => {
     const { currentPage, totalPages } = this.state;
@@ -25,7 +25,9 @@ export default class App extends Component {
         <button onClick={this.decreaseCount}>Prev Page</button>
         <p>Current page: {currentPage}</p>
         <p>Total pages: {totalPages}</p>
-        <Characters/>
+        <Characters
+          currentPage={currentPage}
+        />
       </>
     );
   }
