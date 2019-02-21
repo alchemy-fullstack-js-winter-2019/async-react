@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Character from './Character';
 
+
 describe('does things', () => {
     it('matches a snapchat', () => {
         const char = {

@@ -11,7 +11,6 @@ export default class App extends Component {
     componentDidMount() {
         getCharacters()
             .then(chars => {
-                console.log(chars);
                 this.setState({ characters: chars.results });
             });
     }

@@ -17,5 +17,3 @@ export const getCharacters = () => {
         }));
 };
 
-console.log(getCharacters());
-
