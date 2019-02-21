@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import Location from './Location';
 import { getLocations } from '../../services/rickAndMortyApi';
-// import styles from './Characters.css';
+import styles from './Locations.css';
 import PropTypes from 'prop-types';
 import { withPaging } from '../Paging';
 
@@ -45,7 +45,7 @@ class Locations extends PureComponent {
       );
     });
     return (
-      <ul>
+      <ul className={styles.locations}>
         {locations}
       </ul>
     );

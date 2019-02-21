@@ -16,3 +16,10 @@
 .controls {
   text-align: center;
 }
+
+.locationControl {
+  position: absolute;
+  top: 245px;
+  right: 400px;
+
+}

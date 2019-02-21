@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Characters from './characters/Characters';
-import Locations from './locations/locations';
+import Locations from './locations/Locations';
 import styles from './App.css';
 
 class App extends Component {
