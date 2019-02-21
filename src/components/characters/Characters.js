@@ -23,12 +23,15 @@ export default class Characters extends React.Component {
       });
   }
 
-  componentDidUpdate() {
-    const { currentPage } = this.props;
-    getCharacters(currentPage)
-      .then(response => {
-        this.setState({ characters: response.results });
-      });
+  componentDidUpdate(prevProps) {
+    if(prevProps.currentPage !== this.props.currentPage) {
+      const { currentPage, updateTotalPages } = this.props;
+      getCharacters(currentPage)
+        .then(response => {
+          updateTotalPages(response.totalPages);
+          this.setState({ characters: response.results });
+        });
+    }
   }
 
   render() {

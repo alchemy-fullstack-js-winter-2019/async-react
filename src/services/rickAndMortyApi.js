@@ -1,6 +1,6 @@
 const getCharacters = (currentPage) => {
   console.log(currentPage);
-  return fetch(`https://cors-anywhere.herokuapp.com/http://rickandmortyapi.com/api/character/?page=${currentPage}`, {
+  return fetch(`https://rickandmortyapi.com/api/character/?page=${currentPage}`, {
     method: 'GET',
     headers: {
       origin: null
@@ -17,7 +17,7 @@ const getCharacters = (currentPage) => {
 
 const getLocations = (currentPage) => {
   console.log(currentPage);
-  return fetch(`https://cors-anywhere.herokuapp.com/http://rickandmortyapi.com/api/location/?page=${currentPage}`, {
+  return fetch(`https://rickandmortyapi.com/api/location/?page=${currentPage}`, {
     method: 'GET',
     headers: {
       origin: null
