@@ -3,14 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines": {
-    "node": "10.13.0",
-    "npm": "6.4.1"
-  },
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "start": "react-scripts start",
+    "start": "webpack-dev-server --hot --mode development",
     "build": "webpack -p"
   },
   "author": "",
@@ -55,7 +51,6 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "dom-to-image": "^2.6.0",
     "file-saver": "^2.0.1",
-    "heroku": "^7.22.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.2",
     "react-dom": "^16.8.2"
@@ -68,4 +63,5 @@
     "url": "https://github.com/marcysilverman/async-react/issues"
   },
   "homepage": "https://github.com/marcysilverman/async-react#readme"
+}
 }
