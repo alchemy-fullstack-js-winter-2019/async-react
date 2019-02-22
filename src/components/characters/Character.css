@@ -1,0 +1,14 @@
+.card {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  color: white;
+  position: relative;
+  margin: 20px;
+
+  img {
+    position: absolute;
+    top: 0px;
+    z-index: -999;
+    box-shadow: 0 8px 6px -6px black; 
+  }
+}

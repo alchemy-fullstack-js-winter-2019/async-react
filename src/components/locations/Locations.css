@@ -1,0 +1,8 @@
+.locations {
+  display: grid;
+  grid-template-columns: repeat(3, 321px);
+  grid-template-rows: repeat(10, 321px);
+  grid-gap: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
