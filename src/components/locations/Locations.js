@@ -20,11 +20,13 @@ class Locations extends PureComponent {
   }
 
   fetchLocations = () => {
-    getLocations(this.props.page)
-      .then(response => {
-        this.props.updateTotalPages(response.totalPages);
-        this.setState({ locations: response.results });
-      });
+    setTimeout(() => {
+      getLocations(this.props.page)
+        .then(response => {
+          this.props.updateTotalPages(response.totalPages);
+          this.setState({ locations: response.results });
+        }, 1000);
+    });
   }
 
   componentDidMount() {
