@@ -14,14 +14,14 @@ function Location({ location }) {
           {name}
         </li>
       </a>
-      <li>{type}</li>
-      <li>{dimension}</li>
-      <li>
-        {new Date(created)
-          .toUTCString()
-          .split(' ')
-          .slice(0, 4)
-          .join(' ')}
+      <li>Type: {type}</li>
+      <li>Dimension: {dimension}</li>
+      <li>Created: {new Date(created)
+        .toUTCString()
+        .split(' ')
+        .slice(0, 4)
+        .join(' ')}
+        {/* {created} */}
       </li>
       <li>Residents: {residents.length}</li>
     </ul>
