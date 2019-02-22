@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer matches a snapshot 1`] = `
+<footer
+  className="footer"
+>
+  <a
+    href="#top"
+  >
+     - top - 
+  </a>
+  <p>
+    © 2019 Cari Palazzolo
+  </p>
+</footer>
+`;

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Location matches a snapshot 1`] = `
+<ul
+  style={
+    Object {
+      "listStyle": "none",
+    }
+  }
+>
+  <a
+    target="_blank"
+  >
+    <li
+      style={
+        Object {
+          "color": "rgb(60, 180, 190)",
+          "fontWeight": "bold",
+          "textDecoration": "underline",
+        }
+      }
+    >
+      Earth (C-137)
+    </li>
+  </a>
+  <li>
+    Type: 
+    Planet
+  </li>
+  <li>
+    Dimension: 
+    Dimension C-137
+  </li>
+  <li>
+    Created: 
+    Fri, 10 Nov 2017
+  </li>
+  <li>
+    Residents: 
+    2
+  </li>
+</ul>
+`;

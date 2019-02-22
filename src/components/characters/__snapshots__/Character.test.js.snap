@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character matches a snapshot 1`] = `
+<ul
+  style={
+    Object {
+      "listStyle": "none",
+    }
+  }
+>
+  <a
+    target="_blank"
+  >
+    <li
+      style={
+        Object {
+          "color": "rgb(60, 180, 190)",
+          "fontWeight": "bold",
+          "textDecoration": "underline",
+        }
+      }
+    >
+      fluffy
+    </li>
+  </a>
+  <li>
+    Status: 
+    alive
+  </li>
+  <li>
+    Species: 
+    dog
+  </li>
+  <li>
+    Gender: 
+    female
+  </li>
+  <li>
+    <img
+      style={
+        Object {
+          "width": "70%",
+        }
+      }
+    />
+  </li>
+</ul>
+`;

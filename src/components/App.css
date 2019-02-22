@@ -1,0 +1,16 @@
+:global(body) {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: cyan;
+  .main {
+    display: flex;
+    justify-content: space-around;
+  }
+  @media screen and (max-width: 430px) {
+    .main {
+      display: block;
+      margin-left: 0px;
+    }
+  }
+}

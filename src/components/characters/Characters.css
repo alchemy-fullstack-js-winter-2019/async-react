@@ -1,0 +1,13 @@
+.characters {
+  width: 35%;
+  background-image: repeating-linear-gradient(orange,yellow, pink, orange, pink);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  z-index: 1;
+  h2 {
+    padding-left: 30px;
+  }
+  @media screen and (max-width: 536px) {
+    width: 100%;
+  }
+}
