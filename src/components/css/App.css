@@ -1,3 +1,14 @@
 .pageNext {
   width: 300px;
 }
+
+.header {
+  padding: 30px;
+  background-color: grey;
+  color: white;
+  width: 100%;
+}
+
+.pageContainer {
+  display: flex;
+}

@@ -14,6 +14,7 @@ export class Locations extends PureComponent {
 
   static defaultProps = {
     page: 1,
+    totalPages: 1
   }
 
   state = {

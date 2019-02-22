@@ -1,8 +1,5 @@
 export const getCharacters = (page) => {
-  return fetch(`https://rickandmortyapi.com/api/character/?page=${page}`, {
-    mode: 'no-cors',
-    head: null
-  })
+  return fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
     .then(res => res.json())
     .then(json => ({
       totalPages: json.info.pages,
@@ -11,10 +8,7 @@ export const getCharacters = (page) => {
 };
 
 export const getLocations = (page) => {
-  return fetch(`https://rickandmortyapi.com/api/location/?page=${page}`, {
-    mode: 'no-cors',
-    head: null
-  })
+  return fetch(`https://rickandmortyapi.com/api/location/?page=${page}`)
     .then(res => res.json())
     .then(json => ({
       totalPages: json.info.pages,

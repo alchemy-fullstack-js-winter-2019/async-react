@@ -15,7 +15,7 @@ export class Characters extends PureComponent {
 
   static defaultProps = {
     page: 1,
-
+    totalPages: 1
   }
 
   state = {

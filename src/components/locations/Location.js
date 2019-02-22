@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Location({ location }) {
-  const { name, dimensions, type } = location;
+function Location({ name, dimension, type }) {
   return (
-    <h3>{name}, {dimensions}, {type}</h3>
+    <>
+    <h3>{name}</h3>
+    <p>Dimension: {dimension}, Type: {type}</p>
+    </>
   );
 }
 
 Location.propTypes = {
-  location: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  dimension: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
 };
 
 export default Location;

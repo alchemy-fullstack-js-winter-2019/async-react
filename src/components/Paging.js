@@ -11,11 +11,11 @@ export const withPaging = ComponentToPage => {
     };
 
     increment = () => {
-      this.setState(state => ({ currentPage: state.currentPage }));
+      this.setState(state => ({ currentPage: state.currentPage + 1 }));
     }
 
     decrement = () => {
-      this.setState(state => ({ currentPage: state.currentPage }));
+      this.setState(state => ({ currentPage: state.currentPage - 1 }));
     }
 
     updateTotalPages = totalPages => {
@@ -26,16 +26,17 @@ export const withPaging = ComponentToPage => {
       const { currentPage, totalPages } = this.state;
       return (
         <>
+        <Paging 
+          currentPage={currentPage}
+          totalPages={totalPages}
+          incrementPage={this.increment}
+          decrementPage={this.decrement}
+        />
         <ComponentToPage
           page={this.state.currentPage}
           updateTotalPages={this.updateTotalPages}
           {...this.props}/>
-          <Paging 
-            currentPage={currentPage}
-            totalPages={totalPages}
-            incrementPage={this.increment}
-            decrementPage={this.decrement}
-          />
+          
           </>
       );
     }
@@ -47,9 +48,9 @@ export const withPaging = ComponentToPage => {
 function Paging({ currentPage, totalPages, incrementPage, decrementPage }) {
   return (
     <div className={styles.pageNext}>
-      {currentPage < 1 && <button onClick={decrementPage}>&#60;</button>}
+      <button onClick={decrementPage}>&#60;</button>
       <span>{`${currentPage} / ${totalPages}`}</span>
-      {currentPage > totalPages && <button onClick={incrementPage}>&#62;</button>}
+      <button onClick={incrementPage}>&#62;</button>
     </div>
   );
 }

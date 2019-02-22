@@ -5,10 +5,11 @@ export const withFetch = Component => requestFn => {
   class WithFetch extends PureComponent {
     static propTypes = {
       page: PropTypes.number,
-      updateTotalPages: PropTypes.number
+      updateTotalPages: PropTypes.func
     }
     static defaultProps = {
-      page: 1
+      page: 1,
+      totalPages: 1
     }
 
     state = {
