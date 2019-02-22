@@ -21,7 +21,6 @@ function Location({ location }) {
         .split(' ')
         .slice(0, 4)
         .join(' ')}
-        {/* {created} */}
       </li>
       <li>Residents: {residents.length}</li>
     </ul>

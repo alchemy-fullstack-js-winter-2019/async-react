@@ -1,0 +1,21 @@
+.footer {
+  background: red;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  p {
+    color: white;
+    margin: 0px;
+    padding: 5px 0px 0px 0px;
+  }
+  a:visited {
+    color: cyan;
+  }
+  a:hover {
+    color: purple;
+  }
+  a {
+    color: white;
+  }
+}
