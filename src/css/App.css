@@ -1,0 +1,98 @@
+.container {
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5em;
+  margin: 0;
+  text-shadow: 2px 2px blue;
+  padding: 20px;
+  background: black;
+  color: white;
+}
+
+h3 {
+  text-align: center;
+  font-size: 3em;
+  margin: 0;
+  text-shadow: 2px 2px blue;
+  padding: 10px;
+  background: black;
+  color: white;
+}
+
+.characters {
+  padding: 0 10px;
+  margin: 0;
+}
+
+.locations {
+  padding: 0 10px;
+  margin: 0;
+}
+
+.subTitle {
+  text-align: center;
+  font-size: 3em;
+  margin: 0;
+  text-shadow: 2px 2px blue;
+  padding: 10px;
+color: black;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  list-style-type: none;
+  padding: 0;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+li {
+  list-style: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 2px solid navy;
+  box-shadow: 4px 4px 4px black;
+  background: black;
+  margin: 0px 10px;
+  color: white;
+  text-align: center;
+}
+
+.info {
+  background: white;
+  width: 90%;
+  color: navy;
+  text-align: center;
+  margin: 1em 0;
+  line-height: 0.7em;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  padding-bottom: 15px;
+  border-bottom: 5px solid navy;
+}
+
+button {
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.pageInfo {
+  color: black;
+}
+
+* {
+  font-family: 'montserrat';
+}

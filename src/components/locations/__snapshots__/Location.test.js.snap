@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Location matches a snapshot 1`] = `
+Array [
+  <h2>
+    Earth (C-137)
+  </h2>,
+  <p>
+    Planet
+     | 
+    Dimension C-137
+  </p>,
+]
+`;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Characters matches a snapshot 1`] = `
+Array [
+  <h2
+    className="subTitle"
+  />,
+  <div
+    className="buttons"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Back
+    </button>
+    <p
+      className="pageInfo"
+    >
+      1
+       / 
+      1
+    </p>
+    <button
+      onClick={[Function]}
+    >
+      Forward
+    </button>
+  </div>,
+  <div>
+    <h3>
+      Characters
+    </h3>
+    <ul />
+  </div>,
+]
+`;
