@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const withPaging = ComponentToPage => {
+export const withPaging = ComponentToPage => {
   class WithPaging extends Component {
     state = {
       currentPage: 1,
@@ -9,11 +9,11 @@ const withPaging = ComponentToPage => {
     };
 
   incrementPage = () => {
-    this.setState(state => ({ currentPage: state.currentPage }));
+    this.setState(state => ({ currentPage: state.currentPage + 1 }));
   };
 
   decrementPage = () => {
-    this.setState(state => ({ currentPage: state.currentPage }));
+    this.setState(state => ({ currentPage: state.currentPage - 1 }));
   };
 
   updateTotalPages = totalPages => {
@@ -24,17 +24,17 @@ const withPaging = ComponentToPage => {
     const { currentPage, totalPages } = this.state;
     return (
       <>
-      <Paging 
-        currentPage={currentPage}
-        totalPages={totalPages}
-        incrementPage={this.incrementPage}
-        decrementPage={this.decrementPage}
-      />
-      <ComponentToPage
-        page={currentPage}
-        updateTotalPages={this.updateTotalPages}
-        {...this.props}
-      />
+        <Paging 
+          currentPage={currentPage}
+          totalPages={totalPages}
+          incrementPage={this.incrementPage}
+          decrementPage={this.decrementPage}
+        />
+        <ComponentToPage
+          page={currentPage}
+          updateTotalPages={this.updateTotalPages}
+          {...this.props}
+        />
       </>
     );
   }
@@ -59,4 +59,4 @@ Paging.propTypes = {
   decrementPage: PropTypes.func.isRequired
 };
 
-export default withPaging;
+export default Paging;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 function Character({ character }) {
   const { name, status, species, gender } = character;
+  
   return (
     <tr>
       <td>{name}</td>

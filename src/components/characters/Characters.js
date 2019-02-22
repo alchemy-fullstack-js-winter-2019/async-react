@@ -2,44 +2,18 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { getCharacters } from '../../services/rickAndMortyApi';
 import Character from '../characters/Character';
-import withPaging from '../Paging';
+import { withPaging } from '../paging/Paging';
+import { withFetch } from '../fetch/Fetch';
 
-class Characters extends PureComponent {
+export class Characters extends PureComponent {
   static propTypes = {
-    page: PropTypes.number,
-    updateTotalPages: PropTypes.func.isRequired
+    results: PropTypes.array.isRequired
   };
-
-  static defaultProps = {
-    page: 1
-  };
-
-  state = {
-    characters: []
-  };
-
-  fetchCharacters = () => {
-    getCharacters(this.props.page)
-      .then(response => {
-        this.props.updateTotalPages(response.totalPages);
-        this.setState({ characters: response.results });
-      });
-  };
-
-  componentDidMount() {
-    this.fetchCharacters();
-  }
-
-  componentDidUpdate(prevProps) {
-    if(prevProps.page !== this.props.page) {
-      this.fetchCharacters();
-    }
-  }
 
   render() {
-    const characters = this.state.characters.map(character => {
+    const characters = this.props.results.map(character => {
       return (
-        <Character key={character.name} character={character} />
+        <Character key={character.id} character={character} />
       );
     });
     return (
@@ -47,8 +21,11 @@ class Characters extends PureComponent {
         <tbody>
           {characters}
         </tbody>
-      </table>    
+      </table>
     );
-  }  
+  }
 }
-export const CharactersWithPaging = withPaging(Characters);
+
+const FetchCharacters = withFetch(Characters)(getCharacters);
+
+export const CharactersWithPaging = withPaging(FetchCharacters);

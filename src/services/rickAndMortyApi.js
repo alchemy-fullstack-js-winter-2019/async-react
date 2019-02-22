@@ -1,12 +1,20 @@
-export const getCharacters = () => {
-  return fetch('https://cors-anywhere.hrokuapp.com/http://rickandmortyapi.com/api/character', {
-    headers: {
-      origin: null
-    }
-  })
+const requestApi = (resource, page) => {
+  return fetch(`https://rickandmortyapi.com/api/${resource}?page=${page}`)
     .then(res => res.json())
     .then(json => ({
-      totalPages: Math.ceil(json.count / 10),
+      totalPages: json.info.pages,
       results: json.results
     }));
+};
+
+export const getCharacters = page => {
+  return requestApi('character', page);
+};
+
+export const getLocations = page => {
+  return requestApi('location', page);
+};
+
+export const getEpisodes = page => {
+  return requestApi('episode', page);
 };

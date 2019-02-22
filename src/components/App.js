@@ -1,23 +1,16 @@
-/* eslint-disable no-console */
 import React, { Component } from 'react';
-// import Paging from './Paging';
-import Characters from './characters/Characters';
-import withPaging from './Paging';
+import { CharactersWithPaging } from './characters/Characters';
+import { LocationsWithPaging } from './locations/Locations';
 
-class App extends Component {
+export default class App extends Component {
   render() {  
     return (
       <>
-        <Characters updateTotalPages={() => { }}/>
-        {/* <Paging 
-          currentPage
-        /> */}
+        <CharactersWithPaging />
+        <LocationsWithPaging />
       </>
-        
     );
   }
-function; 
 }
 
-export default App;
 

@@ -569,9 +569,20 @@ const results = [
   }
 ];
 
+const locationsResults = [...Array(10)].map((_, i) => {
+  return { id: i, name: `Planet-${i}`, type: 'planet', dimension: '4' };
+});
+
 export const getCharacters = () => {
   return Promise.resolve({
     totalPages: 25,
     results
+  });
+};
+
+export const getLocations = () => {
+  return Promise.resolve({
+    totalPages: 4,
+    results: locationsResults
   });
 };
