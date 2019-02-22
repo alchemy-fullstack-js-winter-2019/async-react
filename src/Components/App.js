@@ -9,7 +9,7 @@ export default class App extends Component {
     return (
       <>
       <CharactersWithPaging className={styles}/>
-      <LocationsWithPaging className={styles}/>
+      <LocationsWithPaging/>
       </>
     );
   }

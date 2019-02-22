@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from '../css/Characters.css';
 
 export const withPaging = ComponentToPage => {
   class WithPaging extends Component {
@@ -47,7 +48,7 @@ function Paging({ currentPage, totalPages, increment, decrement }) {
   return (
     <>
       {currentPage > 1 && <button onClick={decrement}>Back</button>}
-      <span>{currentPage} / {totalPages}</span>
+      <span className={styles}>{currentPage} / {totalPages}</span>
       {currentPage < totalPages && <button onClick={increment}>Forward</button>}
     </>
   );

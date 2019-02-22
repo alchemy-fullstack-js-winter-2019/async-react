@@ -12,7 +12,7 @@ export class Locations extends PureComponent {
   
   render() {
     const locationRows = this.props.results.map(location => {
-      return <li key={location.id}><Location location={location}/></li>;
+      return <li className="locations" key={location.id}><Location location={location}/></li>;
     });
     return (
       <ul>
