@@ -46,11 +46,25 @@ function Paging({
   increment,
   decrement
 }) {
+  const divStyle = {
+    margin: '10px 5px 0px 5px',
+    fontSize: '12px'
+  };
+  const sectStyle = {
+    background: 'cyan',
+    textAlign: 'center',
+    marginLeft: '10px',
+    zIndex: 'auto'
+  };
   return (
     < >
-      {currentPage < totalPages && <button id="next-btn" onClick={increment}>Next</button>}
-      <span>{currentPage} of {totalPages}</span>
-      {currentPage > 1 && <button id="prev-btn" onClick={decrement}>Previous</button>}
+      <section style={sectStyle}>
+        <div style={divStyle}>
+          {currentPage < totalPages && <button id="next-btn" onClick={increment}>Next</button>}
+          <p>{currentPage} of {totalPages}</p>
+          {currentPage > 1 && <button id="prev-btn" onClick={decrement}>Back</button>}
+        </div>
+      </section>
     </>
   );
 }

@@ -9,14 +9,57 @@ Array [
       src="/path/image"
     />
     <h1>
-      Async React App
+      &lt;async React app/&gt;
     </h1>
   </header>,
-  <span>
-    1
-     of 
-    1
-  </span>,
-  <div />,
+  <main
+    className="main"
+  >
+    <section
+      style={
+        Object {
+          "background": "cyan",
+          "marginLeft": "10px",
+          "textAlign": "center",
+          "zIndex": "auto",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "fontSize": "12px",
+            "margin": "10px 5px 0px 5px",
+          }
+        }
+      >
+        <p>
+          1
+           of 
+          1
+        </p>
+      </div>
+    </section>
+    <div
+      className="characters"
+    >
+      <h2>
+        Characters
+      </h2>
+      <br />
+    </div>
+  </main>,
+  <footer
+    className="footer"
+  >
+    <a
+      href="#top"
+    >
+       - top - 
+    </a>
+    <p>
+      © 2019 Cari Palazzolo
+    </p>
+  </footer>,
 ]
 `;

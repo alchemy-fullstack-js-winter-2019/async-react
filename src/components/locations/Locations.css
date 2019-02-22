@@ -1,0 +1,11 @@
+.locations {
+  width: 31%;
+  float: right;
+  background-image: repeating-linear-gradient(orange,yellow, pink, orange, pink);
+  h2 {
+    padding-left: 30px;
+  }
+  @media screen and (max-width: 536px) {
+    width: 100%;
+  }
+}

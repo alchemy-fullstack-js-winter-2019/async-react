@@ -9,7 +9,7 @@ describe('Character', () => {
       status: 'alive',
       species: 'dog',
       gender: 'female'
-    }
+    };
     const tree = renderer.create(
       <Character character={character}/>
     ).toJSON();
