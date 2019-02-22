@@ -55,6 +55,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "dom-to-image": "^2.6.0",
     "file-saver": "^2.0.1",
+    "heroku": "^7.22.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.2",
     "react-dom": "^16.8.2"
