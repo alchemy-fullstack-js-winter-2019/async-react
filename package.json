@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "start": "webpack-dev-server --hot --mode development",
+    "start": "react-scripts start",
     "build": "webpack -p"
   },
   "author": "",
