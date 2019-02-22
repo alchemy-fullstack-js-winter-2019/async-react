@@ -1,9 +1,5 @@
-export const getCharacters = page => {
-  return fetch(`https://swapi.co/api/people?page=${page}`, {
-    headers: {
-      origin: null
-    }
-  })
+const requestApi = (resource, page) => {
+  return fetch(`https://rickandmortyapi.com/api/${resource}?page=${page}`)
     .then(res => res.json())
     .then(json => ({
       totalPages: json.info.pages,
@@ -11,3 +7,10 @@ export const getCharacters = page => {
     }));
 };
 
+export const getCharacters = page => {
+  return requestApi('character', page);
+};
+
+export const getLocations = page => {
+  return requestApi('location', page);
+};
