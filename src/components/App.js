@@ -16,7 +16,7 @@ export default class App extends Component {
   };
 
   updateTotalPages = desiredPages => {
-    this.setState({ totalPages: desiredPages })
+    this.setState({ totalPages: desiredPages });
   };
 
   render() {
