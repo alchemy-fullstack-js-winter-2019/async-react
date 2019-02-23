@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export const withFetch = Component => requestFn => {
   class WithFetch extends PureComponent {
     static propTypes = {
-      page: PropTypes.number
+      page: PropTypes.number,
       updateTotalPages: PropTypes.func.isRequired
     };
 
@@ -37,7 +37,7 @@ export const withFetch = Component => requestFn => {
     render() {
       return (
         <Component results={this.state.results}
-        {...this.props} />
+          {...this.props} />
       );
     }
   }
