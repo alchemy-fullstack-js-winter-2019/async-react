@@ -17,11 +17,9 @@ export class Characters extends PureComponent {
       );
     });
     return (
-      <table>
-        <tbody>
-          {characters}
-        </tbody>
-      </table>
+      <div>
+        {characters}
+      </div>
     );
   }
 }

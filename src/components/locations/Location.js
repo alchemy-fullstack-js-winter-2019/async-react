@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 function Location({ location }) {
   const { name, dimension, type } = location;
   return (
-    <tr>
-      <td>{name}</td>
-      <td>{dimension}</td>
-      <td>{type}</td>
-    </tr>
+    <div>
+      <label>{name}</label>
+      <label>{dimension}</label>
+      <label>{type}</label>
+    </div>
   );
 }
 
