@@ -3,14 +3,23 @@ import Character from './Character';
 import PropTypes from 'prop-types';
 
 function Characters ({ characters }) {
-  const listOfCharacters = characters.map(({ name, species, status, gender }) => {
+  const listOfCharacters = characters.map(character => {
     return (
-      
       // eslint-disable-next-line react/jsx-key
-      <li>
-
+      <li key={character.id}>
+        <Character character={character} />
       </li>
     );
   });
-
+  return (
+    <ul>
+      {listOfCharacters}
+    </ul>
+  );
 }
+
+Characters.propTypes = {
+  character: PropTypes.array.isRequired
+};
+
+export default Characters;
