@@ -5,27 +5,31 @@ Array [
   <h1>
     Rick and Mort, Yo!
   </h1>,
-  <header>
-    <p>
-      Current Page: 
-      1
-    </p>
-    <p>
-      Total Pages: 
-      1
-    </p>
-  </header>,
-  <button
-    onClick={[Function]}
+  <div
+    className="characters"
   >
-    &lt;
-  </button>,
-  <button
-    onClick={[Function]}
-  >
-    &gt;
-  </button>,
-  <ul />,
+    <header>
+      <p>
+        Current Page: 
+        1
+      </p>
+      <p>
+        Total Pages: 
+        1
+      </p>
+    </header>
+    <button
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+    <ul />
+  </div>,
   <header>
     <p>
       Current Page: 

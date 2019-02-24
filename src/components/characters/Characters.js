@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import Character from './Character';
 import Paging from '../paging/Paging';
 import { getCharacters } from '../../services/rickAndMortyApi';
-import './Characters.css';
+import styles from './Characters.css';
 
 export default class Characters extends PureComponent {
   state = {
@@ -54,7 +54,7 @@ export default class Characters extends PureComponent {
     const { currentPage, totalPages } = this.state;
 
     return (
-      <>
+      <div className={styles.characters}>
         <Paging
           currentPage={currentPage}
           totalPages={totalPages}
@@ -64,7 +64,7 @@ export default class Characters extends PureComponent {
         <ul>
           {charactersList}
         </ul>
-      </>
+      </div>
     );
   }
 }
