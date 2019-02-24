@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Character matches a snapshot 1`] = `
-<div
-  className="characters"
->
+Array [
   <header>
     <p>
       Current Page: 
@@ -13,17 +11,17 @@ exports[`Character matches a snapshot 1`] = `
       Total Pages: 
       1
     </p>
-  </header>
+  </header>,
   <button
     onClick={[Function]}
   >
     &lt;
-  </button>
+  </button>,
   <button
     onClick={[Function]}
   >
     &gt;
-  </button>
-  <ul />
-</div>
+  </button>,
+  <ul />,
+]
 `;

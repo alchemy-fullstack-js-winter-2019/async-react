@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 export default class Character extends PureComponent {
   static propTypes = {
-    character: PropTypes.object.isRequired
+    result: PropTypes.object.isRequired
   }
 
   render() {
-    const { image, name, status, species, gender } = this.props.character;
+    const { image, name, status, species, gender } = this.props.result;
     
     return (
       <li>

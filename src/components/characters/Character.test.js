@@ -14,7 +14,7 @@ describe('Character', () => {
 
     const tree = renderer.create(
       <Character
-        character={character}
+        result={character}
       />
     ).toJSON();
   

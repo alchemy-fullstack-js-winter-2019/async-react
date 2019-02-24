@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 export default class Location extends PureComponent {
   static propTypes = {
-    location: PropTypes.object.isRequired
+    result: PropTypes.object.isRequired
   }
 
   render() {
-    const { name, type, dimension } = this.props.location;
+    const { name, type, dimension } = this.props.result;
 
     return (
       <>
