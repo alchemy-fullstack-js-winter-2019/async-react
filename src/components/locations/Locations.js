@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import { getLocations } from '../../services/rickAndMortyApi';
 import Location from './Location';
 import Paging from '../paging/Paging';
