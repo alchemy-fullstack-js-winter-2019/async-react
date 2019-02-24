@@ -22,7 +22,7 @@ export default class Locations extends PureComponent {
     getLocations(page)
       .then(res => {
         this.props.updateTotalPages(res.totalPages);
-        this.setState({ characters: res.results });
+        this.setState({ locations: res.results });
       });
   }
 
