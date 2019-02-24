@@ -7,34 +7,40 @@ import Paging from '../paging/Paging';
 export default class Locations extends PureComponent {
   state = {
     locations: [],
-    currentPage: 1
+    currentPage: 1,
+    totalPages: 1
   }
 
-  static propTypes = {
-    currentPage: PropTypes.number,
-    totalPages: PropTypes.number,
-    decrement: PropTypes.func.isRequired,
-    increment: PropTypes.func.isRequired,
-    updateTotalPages: PropTypes.func.isRequired
-  }
-
-  fetchLocations = page => {
+  fetch = page => {
     getLocations(page)
       .then(res => {
-        this.props.updateTotalPages(res.totalPages);
-        this.setState({ locations: res.results });
+        this.setState({ locations: res.results, totalPages: res.totalPages });
       });
   }
 
   componentDidMount() {
-    this.fetchLocations(1);
+    this.fetch(1);
   }
 
-  componentDidUpdate(prevProps) {
-    const { currentPage } = this.props;
-    if(prevProps.currentPage !== currentPage) {
-      this.fetchLocations(this.props.currentPage);
+  componentDidUpdate(prevProps, prevState) {
+    const { currentPage } = this.state;
+    if(prevState.currentPage !== currentPage) {
+      this.fetch(currentPage);
     }
+  }
+
+  increment = () => {
+    let page = this.state.currentPage;
+
+    page === this.state.totalPages ? page = 1 : page++;
+    this.setState({ currentPage: page });
+  }
+
+  decrement = () => {
+    let page = this.state.currentPage;
+
+    page === 1 ? page = this.state.totalPages : page--;
+    this.setState({ currentPage: page });
   }
 
   render() {
@@ -45,15 +51,15 @@ export default class Locations extends PureComponent {
       />;
     });
 
-    const { currentPage, totalPages, increment, decrement } = this.props;
+    const { currentPage, totalPages } = this.state;
 
     return (
       <>
       <Paging
         currentPage={currentPage}
         totalPages={totalPages}
-        decrement={decrement}
-        increment={increment}
+        decrement={this.decrement}
+        increment={this.increment}
       />
       <ul>
         {locationsList}
