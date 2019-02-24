@@ -1,5 +1,5 @@
-export const getCharacters = page => {
-  return fetch(`https://rickandmortyapi.com/api/character/?page=${page}`, {
+const get = (result, page) => {
+  return fetch(`https://rickandmortyapi.com/api/${result}/?page=${page}`, {
     headers: { 'origin':  null }
   })
     .then(res => res.json())
@@ -11,15 +11,6 @@ export const getCharacters = page => {
     });
 };
 
-export const getLocations = page => {
-  return fetch(`https://rickandmortyapi.com/api/location/?page=${page}`, {
-    headers: { 'origin':  null }
-  })
-    .then(res => res.json())
-    .then(json => {
-      return {
-        totalPages: json.info.pages,
-        results: json.results
-      };
-    });
-};
+export const getCharacters = page => get('character', page);
+
+export const getLocations = page => get('location', page);
