@@ -2,7 +2,7 @@ import React from 'react';
 import Character from './Character';
 import PropTypes from 'prop-types';
 
-function Characters ({ characters }) {
+function Characters({ characters }) {
   const listOfCharacters = characters.map(character => {
     return (
       // eslint-disable-next-line react/jsx-key
@@ -19,7 +19,7 @@ function Characters ({ characters }) {
 }
 
 Characters.propTypes = {
-  character: PropTypes.array.isRequired
+  characters: PropTypes.array.isRequired
 };
 
 export default Characters;
