@@ -11,7 +11,7 @@ export const getLocations = (page) => {
   return fetch(`https://rickandmortyapi.com/api/location/?page=${page}`)
     .then(res => res.json())
     .then(json => ({
-      locationTotalPages: json.info.pages,
+      totalPages: json.info.pages,
       results: json.results
     }));
 };
