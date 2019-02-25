@@ -1,0 +1,29 @@
+.characters {
+  font-family: sans-serif;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+    li {
+      padding: 10px;
+      background: black;
+      color:lime;
+      text-align: center;
+      list-style: none;
+      border: 2px solid black;
+      width: 200px;
+      margin: 10px;
+    }
+    li:hover {
+      opacity: 0.4;
+    }
+   
+    span {
+      font-weight: bold;
+    }
+    img {
+      width: 200px;
+    }
+  }
+}
