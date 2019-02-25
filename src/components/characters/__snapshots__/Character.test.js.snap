@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does things matches a snapchat 1`] = `
+<li>
+  <p>
+     
+    Antenna Rick
+     
+  </p>
+  <p>
+     
+    Human
+     
+  </p>
+  <p>
+     
+    Male
+     
+  </p>
+</li>
+`;

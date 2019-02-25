@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing things renders the component correctly 1`] = `
+Array [
+  <h1
+    className="header"
+  >
+    HEADER Component
+  </h1>,
+  <p>
+    CURRENT PAGE 
+    1
+  </p>,
+  <p>
+    TotalPages 
+  </p>,
+  <button
+    onClick={[Function]}
+  >
+    NEXT PAGE
+  </button>,
+  <button
+    onClick={[Function]}
+  >
+    PREVIOUS PAGE
+  </button>,
+  <ul />,
+]
+`;
