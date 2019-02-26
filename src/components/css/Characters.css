@@ -1,0 +1,29 @@
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+li {
+  list-style-type: none;
+  position: relative;
+  width: 50%;
+}
+
+h2 {
+  font-size: 1.1em;
+  width: 250px;
+}
+
+button {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100px;
+}
+
+span {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 3%;
+}
