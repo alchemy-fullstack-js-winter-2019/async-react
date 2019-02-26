@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Characters from './characters/Characters';
+import Locations from './locations/Locations';
 
 export default class App extends Component {
   state = {
@@ -30,6 +31,11 @@ export default class App extends Component {
           page={currentPage}
           updateTotalPages={this.updateTotalPages}
         />
+        <Locations 
+          page={currentPage}
+          updateTotalPages={this.updateTotalPages}
+        />
+        
       </>
     ); 
   }
