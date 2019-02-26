@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Characters from './characters/Characters';
 
 // {/* <h1>Rick &amp; Morty Good Funtime</h1> */}
-function App() {
-  const characters = [
-    { name: 'Rick Sanchez', status: 'Alive', species: 'Human', gender: 'Male' },
-    { name: 'Morty Smith', status: 'Alive', species: 'Human', gender: 'Male' },
-    { name: 'Summer Smith', status: 'Alive', species: 'Human', gender: 'Female' },
+export default class App extends Component {
+  state = {
+    currentPage : 1,
+    totalPages : 1
+  };
+
+  render() {
+    const { currentPage, totalPages } = this.state;
     
-  ];
-  return (
-    <>
-      <Characters characters={characters}/>
-    </>
-  ); 
+    return (
+      <>
+        <span>{currentPage} / {totalPages}</span>
+        <Characters page={currentPage}/>
+      </>
+    ); 
+  }
 }
-export default App;
