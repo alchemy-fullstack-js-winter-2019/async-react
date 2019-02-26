@@ -8,11 +8,14 @@ import { withFetch } from '../fetch/Fetch';
 export default class Characters extends PureComponent {
   static propTypes = { 
     page: PropTypes.number,
-    updateTotalPages: PropTypes.func.isRequired
+    updateTotalPages: PropTypes.func.isRequired,
+    results: PropTypes.array.isRequired
   };
+  
   state = {
     characters: []
   };
+
   fetchCharacters = () => {
     getCharacters(this.props.page) 
       .then(response => {
@@ -20,8 +23,7 @@ export default class Characters extends PureComponent {
         this.setState({ characters: response.results });
       });
   };
-   
-
+  
   componentDidMount() {
     this.fetchCharacters();
   }

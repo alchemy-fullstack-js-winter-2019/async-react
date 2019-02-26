@@ -44,6 +44,6 @@ export class Locations extends PureComponent {
   }
 }
 
-const FetchLocations = withFetch(Locations)(getLocations);
+const FetchLocation = withFetch(Locations)(getLocations);
 
-export const LocationsWithPaging = withPaging(FetchLocations);
+export const LocationsWithPaging = withPaging(FetchLocation);
