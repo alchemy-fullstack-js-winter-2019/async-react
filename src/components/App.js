@@ -4,7 +4,7 @@ import Characters from './characters/Characters';
 export default class App extends Component {
   state = {
     currentPage : 1,
-    totalPages : 1
+    totalPages : 10
   };
 
   incrementCurrentPage = () => {
@@ -14,6 +14,9 @@ export default class App extends Component {
   decrementCurrentPage = () => {
     this.setState(state => ({ currentPage: state.currentPage - 1 }));
   };
+  updateTotalPages = updatedTotalPages => {
+    this.setState({ totalPages: updatedTotalPages });
+  };
 
   render() {
     const { currentPage, totalPages } = this.state;
@@ -22,8 +25,11 @@ export default class App extends Component {
       <>
         {currentPage > 1 && <button onClick={this.decrementCurrentPage}>Back</button>}
         <span>{currentPage} / {totalPages}</span>
-        {currentPage > 1 && <button onClick={this.incrementCurrentPage}>Forward</button>}
-        <Characters page={currentPage}/>
+        {currentPage < totalPages && <button onClick={this.incrementCurrentPage}>Forward</button>}
+        <Characters 
+          page={currentPage}
+          updateTotalPages={this.updateTotalPages}
+        />
       </>
     ); 
   }
