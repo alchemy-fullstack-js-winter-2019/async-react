@@ -1,25 +1,29 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import Character from './Character';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { getCharacters } from '../services/rickAndMortyApi';
 
-function Characters({ characters }) {
-  const listOfCharacters = characters.map(character => {
+export default class Characters extends PureComponent {
+  state = {
+    characters: []
+  };
+
+  componentDidMount() {
+    getCharacters() 
+      .then(response => {
+        this.setState({ characters: response.results });
+      });
+  }
+  render() {
+    const characters = this.state.characters.map(character => {
+      return (
+        <Character key={character.id} character={character} />
+      );
+    });
     return (
-      // eslint-disable-next-line react/jsx-key
-      <li key={character.id}>
-        <Character character={character} />
-      </li>
+      <ul>
+        {characters}
+      </ul>
     );
-  });
-  return (
-    <ul>
-      {listOfCharacters}
-    </ul>
-  );
+  }
 }
-
-Characters.propTypes = {
-  characters: PropTypes.array.isRequired
-};
-
-export default Characters;

@@ -4,7 +4,6 @@ export const getCharacters = () => {
     headers : {
       origin: null
     }
-
   })
     .then(res => res.json())
     .then(json => ({
