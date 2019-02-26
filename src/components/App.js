@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import Characters from './characters/Characters';
 
-// {/* <h1>Rick &amp; Morty Good Funtime</h1> */}
 export default class App extends Component {
   state = {
     currentPage : 1,
     totalPages : 1
+  };
+
+  incrementCurrentPage = () => {
+    this.setState(state => ({ currentPage: state.currentPage + 1 }));
+  };
+
+  decrementCurrentPage = () => {
+    this.setState(state => ({ currentPage: state.currentPage - 1 }));
   };
 
   render() {
@@ -13,7 +20,9 @@ export default class App extends Component {
     
     return (
       <>
+        {currentPage > 1 && <button onClick={this.decrementCurrentPage}>Back</button>}
         <span>{currentPage} / {totalPages}</span>
+        {currentPage > 1 && <button onClick={this.incrementCurrentPage}>Forward</button>}
         <Characters page={currentPage}/>
       </>
     ); 

@@ -1,4 +1,3 @@
-
 export const getCharacters = () => {
   return fetch ('https://rickandmortyapi.com/api/character', {
     headers : {
