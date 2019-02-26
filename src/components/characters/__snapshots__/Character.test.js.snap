@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character matches a snapshot 1`] = `
+<li>
+  <img />
+  <p>
+    bob
+  </p>
+  <p>
+    Status: 
+    alive
+  </p>
+  <p>
+    Species: 
+    human
+  </p>
+  <p>
+    Gender: 
+    mail
+  </p>
+</li>
+`;

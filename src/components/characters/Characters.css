@@ -1,0 +1,14 @@
+ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 2vw;
+}
+
+.characters {
+  float: left;
+  width: 65vw;
+}
+
+img {
+  width: 200px;
+}

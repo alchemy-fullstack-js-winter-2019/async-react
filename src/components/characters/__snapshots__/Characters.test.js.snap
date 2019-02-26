@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character matches a snapshot 1`] = `
+Array [
+  <header>
+    <p>
+      Current Page: 
+      1
+    </p>
+    <p>
+      Total Pages: 
+      1
+    </p>
+  </header>,
+  <button
+    onClick={[Function]}
+  >
+    &lt;
+  </button>,
+  <button
+    onClick={[Function]}
+  >
+    &gt;
+  </button>,
+  <ul />,
+]
+`;
