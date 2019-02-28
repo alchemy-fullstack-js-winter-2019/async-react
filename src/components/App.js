@@ -30,10 +30,10 @@ export default class App extends Component {
 
 
   render() {
-    const { currentPage, totalPages } = this.state;
+    const { currentPage } = this.state;
     return (
       <>
-      <Paging />
+      <withPaging />
       <Characters 
         page={currentPage}
         updateTotalPages={this.updateTotalPages}
