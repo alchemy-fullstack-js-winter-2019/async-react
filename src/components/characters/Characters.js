@@ -8,11 +8,12 @@ import { withFetch } from '../fetch/Fetch';
 class Characters extends PureComponent {
   static propTypes = {
     page: PropTypes.number,
-    updateTotalPages: PropTypes.func.isRequired
+    updateTotalPages: PropTypes.func
   };
 
   static defaultProps = {
-    page: 1
+    page: 1,
+    totalPages: 1
   };
 
   state = {
@@ -22,9 +23,9 @@ class Characters extends PureComponent {
   fetchCharacters() {
     //fetch data
     getCharacters(this.props.page)
-      .then(response => {
-        this.props.updateTotalPages(response.totalPages);
-        this.setState({ characters: response.results }); //set state with results
+      .then(res => {
+        this.props.updateTotalPages(res.totalPages);
+        this.setState({ characters: res.results }); //set state with results
 
       });
   }
@@ -40,7 +41,7 @@ class Characters extends PureComponent {
   }
 
   render() {
-    const characters = this.state.characters.map(character => {
+    const characterList = this.state.characters.map(character => {
       return (
         <Character key={character.id} character={character} />
       );
@@ -49,13 +50,13 @@ class Characters extends PureComponent {
     return (
       <ul>
         <li>
-          {characters}
+          {characterList}
         </li>
       </ul>
     );
   }
 }
 
-const fetchCharacters = withFetch(Characters)(getCharacters);
-export default withPaging(fetchCharacters);
-// export const CharacterWithPaging = withPaging(Characters);
+const FetchCharacters = withFetch(Characters)(getCharacters);
+export default withPaging(FetchCharacters);
+// export const CharacterWithPaging = withPaging(FetchCharacters);

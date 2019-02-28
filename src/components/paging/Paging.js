@@ -16,7 +16,7 @@ export const withPaging = ComponentToPage => {
       this.setState(state => ({ currentPage: state.currentPage - 1 }));
     };
 
-    updateTotalpages = totalPages => {
+    updateTotalPages = totalPages => {
       this.setState({ totalPages });
     };
 

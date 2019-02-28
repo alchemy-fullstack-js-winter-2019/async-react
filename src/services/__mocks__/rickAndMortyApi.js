@@ -576,3 +576,10 @@ export const getCharacters = () => {
 
   });
 };
+
+export const getLocations = () => {
+  return Promise.resolve({
+    totalPages: 4,
+    results
+  });
+};

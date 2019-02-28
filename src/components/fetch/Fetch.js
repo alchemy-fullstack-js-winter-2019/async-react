@@ -5,15 +5,16 @@ export const withFetch = Component => requestFn => {
   class WithFetch extends PureComponent {
     static propTypes = {
       page: PropTypes.number,
-      updateTotalPages: PropTypes.func.isRequired
+      updateTotalPages: PropTypes.func
     };
     static defaultProps = {
-      page: 1
+      page: 1,
+      totalPages: 1
     };
     state = {
       results: []
     };
-    fetchResult = () => {
+    fetchResults = () => {
       requestFn(this.props.page)
         .then(response => {
           this.props.updateTotalPages(response.totalPages);
