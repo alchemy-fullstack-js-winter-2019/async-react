@@ -55,8 +55,8 @@ function Paging({ currentPage, totalPages, increment, decrement }) {
 Paging.propTypes = {
   currentPage: PropTypes.number.isRequired,
   totalPages: PropTypes.number.isRequired,
-  handleClickDecrement: PropTypes.func.isRequired,
-  handleClickIncrement: PropTypes.func.isRequired
+  decrement: PropTypes.func.isRequired,
+  increment: PropTypes.func.isRequired
 };
 
 export default Paging;
