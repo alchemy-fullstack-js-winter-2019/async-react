@@ -1,7 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Characters matches a snapshot 1`] = `
-<ul>
-  <li />
-</ul>
+Array [
+  <span>
+    1
+     / 
+    1
+  </span>,
+  ";",
+  <ul>
+    <li />
+  </ul>,
+]
 `;

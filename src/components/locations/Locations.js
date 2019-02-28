@@ -8,7 +8,7 @@ import { withFetch } from '../fetch/Fetch';
 export class Locations extends PureComponent {
   static propTypes = {
     page: PropTypes.number,
-    updateTotalPages: PropTypes.func.isRequired
+    updateTotalPages: PropTypes.func
   };
   static defaultProps = {
     page: 1,
