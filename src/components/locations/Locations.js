@@ -13,22 +13,6 @@ export class Locations extends PureComponent {
 
   };
 
-  state = {
-    locations: []
-  };
-
-  fetchLocations = () => {
-    getLocations(this.props.page) 
-      .then(response => {
-        this.props.updateTotalPages(response.totalPages);
-        this.setState({ locations: response.results });
-      });
-  };
-
-  componentDidMount() {
-    this.fetchLocations();
-  }
-
   render() {
     const locationRows = this.props.results.map(location => {
       return <Location key={location.id} location={location} />;
