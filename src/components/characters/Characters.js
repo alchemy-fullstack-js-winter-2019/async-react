@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import Character from './Character';
 import PropTypes from 'prop-types';
-import { getCharacters } from '../services/rickAndMortyApi';
+import { getCharacters } from '../../../services/rickAndMortyApi';
 import { withPaging } from '../paging/Paging';
 import { withFetch } from '../fetch/Fetch';
 
@@ -11,24 +11,9 @@ export default class Characters extends PureComponent {
     updateTotalPages: PropTypes.func.isRequired,
     results: PropTypes.array.isRequired
   };
-  
-  state = {
-    characters: []
-  };
-
-  fetchCharacters = () => {
-    getCharacters(this.props.page) 
-      .then(response => {
-        this.props.updateTotalPages(response.totalPages);
-        this.setState({ characters: response.results });
-      });
-  };
-  
-  componentDidMount() {
-    this.fetchCharacters();
-  }
+ 
   render() {
-    const characters = this.state.characters.map(character => {
+    const characters = this.props.results.map(character => {
       return (
         <Character key={character.id} character={character} />
       );
