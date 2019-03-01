@@ -3,8 +3,25 @@
 exports[`App matches a snapshot 1`] = `
 Array [
   <h1>
-    My List of Things
+    Rick and Morty
   </h1>,
-  <ul />,
+  <span>
+    1
+     / 
+    1
+  </span>,
+  ";",
+  <ul>
+    <li />
+  </ul>,
+  <span>
+    1
+     / 
+    1
+  </span>,
+  ";",
+  <ul>
+    <li />
+  </ul>,
 ]
 `;

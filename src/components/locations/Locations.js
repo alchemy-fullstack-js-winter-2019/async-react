@@ -1,53 +1,58 @@
 import React, { PureComponent } from 'react';
 import { withPaging } from '../paging/Paging';
 import Location from './Location';
-import { getLocation } from '../../services/rickAndMortyApi';
-
-
+import { getLocations } from '../../services/rickAndMortyApi';
+import PropTypes from 'prop-types';
+import { withFetch } from '../fetch/Fetch';
 
 export class Locations extends PureComponent {
   static propTypes = {
-    page: PropType.number,
-    updatedTotalPages: PropTypes.func.isRequired
+    page: PropTypes.number,
+    updateTotalPages: PropTypes.func
   };
   static defaultProps = {
-    page:1
+    page: 1,
+    totalPages: 1
   };
   state = {
     locations: []
   };
 
-  fetchLocation = () => {
-    getLocations()
-      .then(response => {
-        this.props.updateTotalPages(response.totalPages);
-        this.setState({ locations: response.results });
+  fetchLocations = () => {
+    getLocations(this.props.page)
+      .then(res => {
+        this.props.updateTotalPages(res.totalPages);
+        this.setState({ locations: res.results });
       });
   }
 
   componentDidMount() {
-    this.fetchLocation();
+    this.fetchLocations();
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.page !== this.props.page) {
-      this.fetchLocation();
+      this.fetchLocations();
     }
   }
 
   render() {
     const locationList = this.state.locations.map(location => {
-    return <Location key={location.id} location={location} />;
-  });
+      return (<Location key={location.id} location={location} />);
+    });
 
-  return (
-    <ul>
-    <li>
-    {locationList}
-    </li>
-    </ul>
-  );
+    return (
+      <ul>
+        <li>
+          {locationList}
+        </li>
+      </ul>
+    );
+  }
 }
 
 
-export const LocationsWithPaging =  withPaging(Locations);
+const FetchLocations = withFetch(Locations)(getLocations);
+export default withPaging(FetchLocations);
+// export const LocationsWithPaging =  withPaging(Locations);
+
