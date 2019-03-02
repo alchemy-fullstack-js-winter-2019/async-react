@@ -36,7 +36,7 @@ We'll be using the Rick and Morty Api to display a character.
 * create a `src/services/rickAndMortyApi.js`
 * create and export a `getCharacters` function
 * use `fetch` to get a list of characters
-  * use "https://cors-anywhere.herokuapp.com/http://rickandmortyapi.com/api/character"
+  * use "https://rickandmortyapi.com/api/character"
   * set the header `origin` to `null`
   * return an object with `{ totalPages, results }`
 * BONUS:
